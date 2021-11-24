@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Time.timeScale = 1f;
     }
 
     public void PlayGame()
