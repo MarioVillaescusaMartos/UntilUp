@@ -1,8 +1,8 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+
 
 public class BackgroundManager : MonoBehaviour
 {
@@ -10,26 +10,25 @@ public class BackgroundManager : MonoBehaviour
 
     public Material mComet;
     public Material mStar;
+    public Material mMoon;
 
-    public int numMStars = 50;
+    public int numStars;
+    public int numComets;
 
-    public float separacionT = 2;
+    public float rotationM;
 
-    public float rotacionL = 60;
-    public float distanciaL = 3;
-    public float escalaL = 0.2f;
+    public float rotacionC;
+    public float distanciaC;
+    public float escalaC;
 
-    public float velocidadRotacionL = 30.0f;
+    public float velocidadRotacionC;
+    public float velocidadRotacionM;
 
-    public int numEstrellas = 200;
+    public float anchoCampoEstrellas;
+    public float altoCampoEstrellas;
+    public float distanciaCampoEstrellas;
 
-    public Material mEstrella;
-
-    public float anchoCampoEstrellas = 300;
-    public float altoCampoEstrellas = 200;
-    public float distanciaCampoEstrellas = 100;
-
-    public float velocidadEscalaEstrellas = 0.1f;
+    public float velocidadEscalaEstrellas;
 
     Vector3[] posicionesEstrellas;
     float[] escalasEstrellas;
@@ -37,20 +36,20 @@ public class BackgroundManager : MonoBehaviour
     Matrix4x4[] matricesEstrellas;
     Matrix4x4[] matricesEstrellasEscaladas;
 
-    float escalaEstrellas = 0;
+    float escalaEstrellas;
 
 
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        posicionesEstrellas = new Vector3[numEstrellas];
-        matricesEstrellas = new Matrix4x4[numEstrellas];
-        matricesEstrellasEscaladas = new Matrix4x4[numEstrellas];
+        posicionesEstrellas = new Vector3[numStars];
+        matricesEstrellas = new Matrix4x4[numStars];
+        matricesEstrellasEscaladas = new Matrix4x4[numStars];
 
-        escalasEstrellas = new float[numEstrellas];
+        escalasEstrellas = new float[numStars];
 
-        for (int i = 0; i < numEstrellas; i++)
+        for (int i = 0; i < numStars; i++)
         {
             posicionesEstrellas[i] = new Vector3(UnityEngine.Random.Range(-anchoCampoEstrellas / 2, anchoCampoEstrellas / 2),
                                                   UnityEngine.Random.Range(-altoCampoEstrellas / 2, altoCampoEstrellas / 2),
@@ -65,37 +64,31 @@ public class BackgroundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Matrix4x4 MSol = transform.localToWorldMatrix;
+        Matrix4x4 Pivot = transform.localToWorldMatrix;
 
-        for (int i = 0; i < numTierras; i++)
+        Matrix4x4 MMoon = Pivot * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotationM * 360.0f));
+        Graphics.DrawMesh(model, MMoon, mMoon, 0);
+
+        for (int i = 0; i < numComets; i++)
         {
-            Matrix4x4 MTierra = MSol * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotacionT + i * 360.0f / numTierras)) *
-                                   Matrix4x4.Translate(new Vector3(distanciaT + i * separacionT, 0, 0)) *
-                                   Matrix4x4.Scale(new Vector3(escalaT, escalaT, 1));
+            Matrix4x4 MComet = Pivot * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotacionC + i * 360.0f / numComets)) *
+                                   Matrix4x4.Translate(new Vector3(distanciaC, 0, 0)) *
+                                   Matrix4x4.Scale(new Vector3(escalaC, escalaC, 1));
 
-            Graphics.DrawMesh(model, MTierra, mTierra, 0);
-
-
-
-            Matrix4x4 MLuna = MTierra * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotacionL)) *
-                                        Matrix4x4.Translate(new Vector3(distanciaL, 0, 0)) *
-                                        Matrix4x4.Scale(new Vector3(escalaL, escalaL, 1));
-
-            Graphics.DrawMesh(model, MLuna, mLuna, 0);
-
-
+            Graphics.DrawMesh(model, MComet, mComet, 0);
         }
 
-        rotacionT += velocidadRotacionT * Time.deltaTime;
-        rotacionL += velocidadRotacionL * Time.deltaTime;
+        rotacionC += velocidadRotacionC * Time.deltaTime;
+        rotationM += velocidadRotacionM * Time.deltaTime;
 
-        for (int i = 0; i < numEstrellas; i++)
+        for (int i = 0; i < numStars; i++)
         {
             float s = escalasEstrellas[i];
             matricesEstrellasEscaladas[i] = matricesEstrellas[i] * Matrix4x4.Scale(new Vector3(s, s, 1));
         }
 
-        Graphics.DrawMeshInstanced(model, 0, mEstrella, matricesEstrellasEscaladas);
+        //Graphics.DrawMeshInstanced(model, 0, mStar, matricesEstrellasEscaladas);
+
 
         escalaEstrellas += velocidadEscalaEstrellas * Time.deltaTime;
 
