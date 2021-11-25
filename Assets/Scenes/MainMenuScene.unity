@@ -1391,18 +1391,18 @@ MonoBehaviour:
   mComet: {fileID: 2100000, guid: 6fdf8f594da99cd45a4a77238516e866, type: 2}
   mStar: {fileID: 2100000, guid: e5af4102cee746947b0b5866fac1a376, type: 2}
   mMoon: {fileID: 2100000, guid: 2740466b7f0e25942a75279b93fdf9cc, type: 2}
-  numStars: 50
   numComets: 3
-  rotationM: 10
+  velocidadRotacionC: 30
   rotacionC: 10
   distanciaC: 1.5
   escalaC: 0.2
-  velocidadRotacionC: 30
   velocidadRotacionM: 0.01
-  anchoCampoEstrellas: 300
-  altoCampoEstrellas: 200
-  distanciaCampoEstrellas: 100
-  velocidadEscalaEstrellas: 0.1
+  rotationM: 10
+  numStars: 150
+  anchoCampoEstrellas: 50
+  altoCampoEstrellas: 25
+  distanciaCampoEstrellas: 10
+  velocidadEscalaEstrellas: 1
 --- !u!64 &916876531
 MeshCollider:
   m_ObjectHideFlags: 0

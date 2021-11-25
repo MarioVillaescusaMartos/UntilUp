@@ -7,24 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class BackgroundManagerMeshes : MonoBehaviour
 {
+    //Model
     public Mesh model;
 
+    //Meterial
     public Material mComet;
     public Material mStar;
     public Material mMoon;
 
-    public int numStars;
+    //Comets
     public int numComets;
-
-    public float rotationM;
-
+    public float velocidadRotacionC;
     public float rotacionC;
     public float distanciaC;
     public float escalaC;
 
-    public float velocidadRotacionC;
+    //Moon
     public float velocidadRotacionM;
+    public float rotationM;
 
+    //Stars
+    public int numStars;
     public float anchoCampoEstrellas;
     public float altoCampoEstrellas;
     public float distanciaCampoEstrellas;
@@ -38,8 +41,6 @@ public class BackgroundManagerMeshes : MonoBehaviour
     Matrix4x4[] matricesEstrellasEscaladas;
 
     float escalaEstrellas;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class BackgroundManagerMeshes : MonoBehaviour
                                                 );
             matricesEstrellas[i] = Matrix4x4.Translate(posicionesEstrellas[i]);
 
-            escalasEstrellas[i] = UnityEngine.Random.Range(1, 2.0f);
+            escalasEstrellas[i] = Random.Range(1, 2.0f);
         }
     }
 
@@ -82,20 +83,14 @@ public class BackgroundManagerMeshes : MonoBehaviour
         rotacionC += velocidadRotacionC * Time.deltaTime;
         rotationM += velocidadRotacionM * Time.deltaTime;
 
-
-        Debug.Log(rotacionC + " " + rotationM);
-
         for (int i = 0; i < numStars; i++)
         {
             float s = escalasEstrellas[i];
             matricesEstrellasEscaladas[i] = matricesEstrellas[i] * Matrix4x4.Scale(new Vector3(s, s, 1));
         }
 
-        //Graphics.DrawMeshInstanced(model, 0, mStar, matricesEstrellasEscaladas);
-
-
-        escalaEstrellas += velocidadEscalaEstrellas * Time.deltaTime;
-
+        Graphics.DrawMeshInstanced(model, 0, mStar, matricesEstrellasEscaladas);
+        
         if (escalaEstrellas > 1.0f)
         {
             escalaEstrellas = 0;
