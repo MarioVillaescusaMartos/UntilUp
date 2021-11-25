@@ -79,8 +79,9 @@ public class BackgroundManagerMeshes : MonoBehaviour
             Graphics.DrawMesh(model, MComet, mComet, 0);
         }
 
-        RotationsCalculate();
-        
+        rotacionC += velocidadRotacionC * Time.deltaTime;
+        rotationM += velocidadRotacionM * Time.deltaTime;
+
 
         Debug.Log(rotacionC + " " + rotationM);
 
@@ -99,11 +100,5 @@ public class BackgroundManagerMeshes : MonoBehaviour
         {
             escalaEstrellas = 0;
         }
-    }
-
-    void RotationsCalculate()
-    {
-        rotacionC += velocidadRotacionC * Time.deltaTime;
-        rotationM += velocidadRotacionM * Time.deltaTime;
     }
 }
