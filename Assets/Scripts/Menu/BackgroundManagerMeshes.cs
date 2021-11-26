@@ -53,13 +53,13 @@ public class BackgroundManagerMeshes : MonoBehaviour
 
         for (int i = 0; i < numStars; i++)
         {
-            posicionesEstrellas[i] = new Vector3(UnityEngine.Random.Range(-anchoCampoEstrellas / 2, anchoCampoEstrellas / 2),
-                                                  UnityEngine.Random.Range(-altoCampoEstrellas / 2, altoCampoEstrellas / 2),
+            posicionesEstrellas[i] = new Vector3(Random.Range(-anchoCampoEstrellas / 2, anchoCampoEstrellas / 2),
+                                                  Random.Range(-altoCampoEstrellas / 2, altoCampoEstrellas / 2),
                                                   distanciaCampoEstrellas
                                                 );
             matricesEstrellas[i] = Matrix4x4.Translate(posicionesEstrellas[i]);
 
-            escalasEstrellas[i] = Random.Range(1, 2.0f);
+            escalasEstrellas[i] = Random.Range(1, 1.5f);
         }
     }
 
