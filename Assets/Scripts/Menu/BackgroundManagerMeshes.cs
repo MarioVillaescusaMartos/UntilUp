@@ -59,7 +59,7 @@ public class BackgroundManagerMeshes : MonoBehaviour
                                                 );
             matricesEstrellas[i] = Matrix4x4.Translate(posicionesEstrellas[i]);
 
-            escalasEstrellas[i] = Random.Range(1, 1.5f);
+            escalasEstrellas[i] = Random.Range(0.1f, 0.3f);
         }
     }
 

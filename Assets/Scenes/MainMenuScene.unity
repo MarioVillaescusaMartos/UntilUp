@@ -1398,10 +1398,10 @@ MonoBehaviour:
   escalaC: 0.2
   velocidadRotacionM: 0.01
   rotationM: 10
-  numStars: 150
-  anchoCampoEstrellas: 50
-  altoCampoEstrellas: 25
-  distanciaCampoEstrellas: 10
+  numStars: 500
+  anchoCampoEstrellas: 18
+  altoCampoEstrellas: 10
+  distanciaCampoEstrellas: 5
   velocidadEscalaEstrellas: 1
 --- !u!64 &916876531
 MeshCollider:
@@ -2473,14 +2473,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583868223}
-  m_LocalRotation: {x: -0, y: -0, z: 0.32689595, w: 0.9450603}
+  m_LocalRotation: {x: 0, y: 0, z: 0.27669415, w: 0.96095806}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.65525, y: 2.65525, z: 2.65525}
   m_Children:
   - {fileID: 1605832654}
   m_Father: {fileID: 755524751}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 38.161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.126}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 303, y: 393}
