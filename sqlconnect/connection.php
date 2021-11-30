@@ -1,14 +1,14 @@
 <?php
 
-/*$dbhost = "sql11.freemysqlhosting.net";
-$dbuser = "sql11415078";
-$dbpass = "1G2zn97MHC";
-$dbname = "sql11415078";*/
+$dbhost = "sql4.freemysqlhosting.nett";
+$dbuser = "sql4455360";
+$dbpass = "Qn35xDJKkl";
+$dbname = "sql4455360";
 
-$dbhost = "localhost";
+/*$dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "unityacces";
+$dbname = "unityacces";*/
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn)
