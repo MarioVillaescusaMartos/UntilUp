@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class Register : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Register : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
-        WWW www = new WWW("https://sqlconnect.thekingred007.repl.co/register.php", form);
+        WWW www = new WWW("https://localhost/sqlconnect/register.php", form);
         yield return www;
 
         if (www.text == "0")

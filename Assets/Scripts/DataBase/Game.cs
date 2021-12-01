@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
         form.AddField("name", DBManager.username);
         form.AddField("score", DBManager.score);
 
-        WWW www = new WWW("https://sqlconnect.thekingred007.repl.co/savedata.php", form);
+        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
         yield return www;
         if (www.text == "0")
         {
