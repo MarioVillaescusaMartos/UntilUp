@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8099214196506042563}
   - component: {fileID: 8099214196506042560}
   m_Layer: 0
-  m_Name: Laser projectile
+  m_Name: LaserProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
