@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 791743614}
+        m_TargetAssemblyTypeName: SignOff, Assembly-CSharp
+        m_MethodName: SigningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2883618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1414,7 @@ GameObject:
   - component: {fileID: 791743611}
   - component: {fileID: 791743612}
   - component: {fileID: 791743613}
+  - component: {fileID: 791743614}
   m_Layer: 5
   m_Name: CanvasMenus
   m_TagString: Untagged
@@ -1542,6 +1555,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sliderMusic: {fileID: 234196044}
   _sliderFX: {fileID: 1917666008}
+--- !u!114 &791743614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791743605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bcfac1c006c384ebf11ef51f46c742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916876529
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,8 +27,8 @@ public class Login : MonoBehaviour
         if (www.text[0] == '0')
         {
             DBManager.username = usernameField.text;
-            DBManager.score = int.Parse(www.text.Split('\t')[1]);
-            SceneManager.LoadScene("GameScene");
+            DBManager.id = int.Parse(www.text.Split('\t')[1]);
+            SceneManager.LoadScene("MainMenuScene");
         }
         else
         {
