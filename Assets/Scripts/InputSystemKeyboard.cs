@@ -17,7 +17,7 @@ public class InputSystemKeyboard : MonoBehaviour
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             OnFire();//Cuando se pulsa la tecla se llama al evento y se avisan a as clases suscritas
         }

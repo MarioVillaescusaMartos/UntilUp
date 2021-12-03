@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -13,10 +14,6 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        if (DBManager.username == null)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SignInScene");
-        }
         playerDisplay.text = "Player: " + DBManager.username;
         idDisplay.text = "ID: " + DBManager.id;
         scoreDisplay.text = "Score: " + score;
@@ -39,14 +36,12 @@ public class Game : MonoBehaviour
         if (www.text == "0")
         {
             Debug.Log("Game saved");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenuScene");
+            SceneManager.LoadScene("MainMenuScene");
         }
         else
         {
             Debug.Log("Save failed. Error #" + www.text);
         }
-
-        //DBManager.LogOut();
 
     }
 }

@@ -4,19 +4,6 @@ using UnityEngine;
 
 public class BlasterSystem : ShootingSystem
 {
-    /*private void Shoot()
-    {
-        /*if (shootType == false)
-        {
-            for (int i = 1; i < 3; i++)
-            {
-                var shot = Instantiate(projectile, shotPoint[i].position, shotPoint[i].rotation);
-                shot.GetComponent<Rigidbody2D>().AddForce(shotPoint[i].up * fireForce);
-            }
-            var telShoot = Mathf.Atan2(meteorite.y - projectile.y, meteorite.x - projectile.x);
-        } 
-    }*/
-
     void Awake()
     {
         InputSystemKeyboard sk;

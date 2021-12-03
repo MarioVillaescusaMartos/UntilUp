@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SignOff : MonoBehaviour
 {
-    private void Awake()
+    public void CallSigningOff()
     {
-        if (DBManager.username == null)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SignInScene");
-        }
+        StartCoroutine(SigningOff());
+        
     }
 
-    public void SigningOff()
+    IEnumerator SigningOff()
     {
+        yield return DBManager.username;
+
         DBManager.LogOut();
+
+        if (DBManager.username == null)
+        {
+            SceneManager.LoadScene("SignInScene");
+        }
     }
 }
