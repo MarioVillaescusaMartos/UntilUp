@@ -22,6 +22,11 @@ public class InputSystemKeyboard : MonoBehaviour
             OnFire();//Cuando se pulsa la tecla se llama al evento y se avisan a as clases suscritas
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OnPause(); //Cuando se pulsa la tecla "Esc" el juego se pausa

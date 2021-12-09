@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
+    [SerializeField]
+    private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.TryGetComponent(out Engine speedEngine))
+        {
+            speedEngine.GetSpeed(speed);
+        }
     }
 }
