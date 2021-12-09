@@ -14,11 +14,21 @@ public class Engine : MonoBehaviour
     private SpriteRenderer _sp;
     private Rigidbody2D _rb;
 
-    void Awake()
+    private void Awake()
     {
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _sp = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        _inputSystem.OnJump += Jumping;
+    }
+
+    private void OnDisable()
+    {
+        _inputSystem.OnJump -= Jumping;
     }
 
     // Update is called once per frame
@@ -39,18 +49,15 @@ public class Engine : MonoBehaviour
         {            
             _sp.flipX = true;            
         }
-
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            
-                _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
-            
-        }
     }
 
     public void GetSpeed(float speedGet)
     {
         speed = speedGet;
+    }
+
+    public void Jumping()
+    {
+        _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
     }
 }

@@ -7,15 +7,18 @@ public class InputSystemKeyboard : MonoBehaviour
 {
     public float hor { get; private set; } //get sirve para obtener/set para asignar
     public float ver { get; private set; }
+    //public bool w { get; private set; }
 
     public event Action OnFire = delegate { }; //Se crea el evento pulico para que hayan clases que se puedan enterar de el (OnFire puede ser cualquier nombre)(delegate: forma de decir que es un evento)
     public event Action OnPause = delegate { };
+    public event Action OnJump = delegate { };
 
     // Update is called once per frame
     void Update()
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
+        //w = Input.GetKeyDown(KeyCode.W);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -25,6 +28,11 @@ public class InputSystemKeyboard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            OnJump();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
