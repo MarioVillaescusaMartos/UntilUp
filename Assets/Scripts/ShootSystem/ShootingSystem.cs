@@ -6,7 +6,7 @@ public abstract class ShootingSystem : MonoBehaviour
 {
     public ShootingSystemData shootingdata;
 
-    public Transform shotPoint;
+    public Transform[] shotPoint;
 
     public int bullets;
 

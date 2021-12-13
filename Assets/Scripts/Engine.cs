@@ -6,29 +6,40 @@ using System;
 public class Engine : MonoBehaviour
 {
     private float speed;
+    private bool secondJump;
 
     [SerializeField]
     private float jumpSpeed;
+    [SerializeField]
+    private Transform groundChecker;
+    [SerializeField]
+    private float radius;
+    [SerializeField]
+    private LayerMask groundMask;
 
     private InputSystemKeyboard _inputSystem;
     private SpriteRenderer _sp;
     private Rigidbody2D _rb;
+    private HealthSystem _healthSystem;
 
     private void Awake()
     {
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _sp = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
+        //_healthSystem = GetComponent<HealthSystem>();
     }
 
     private void OnEnable()
     {
         _inputSystem.OnJump += Jumping;
+        GetComponent<HealthSystem>().OnHealthZero += ResetPosition;
     }
 
     private void OnDisable()
     {
         _inputSystem.OnJump -= Jumping;
+        GetComponent<HealthSystem>().OnHealthZero -= ResetPosition;
     }
 
     // Update is called once per frame
@@ -58,6 +69,28 @@ public class Engine : MonoBehaviour
 
     public void Jumping()
     {
-        _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+        bool t = Physics2D.OverlapCircle(groundChecker.position, radius, groundMask);
+        if (t)
+        {
+            secondJump = true;
+        }
+
+        if (t)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+        }
+        else if (secondJump)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+            secondJump = false;
+        }
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = GameObject.Find("RespawnPoint").transform.position;
+        StopAllCoroutines();
+
+        Debug.Log("Reset Poition");
     }
 }

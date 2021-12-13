@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 454482999995470542}
   - component: {fileID: 4660839203680484637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: moon-platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

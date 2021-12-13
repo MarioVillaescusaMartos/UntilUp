@@ -17,11 +17,10 @@ public class HealthSystem : MonoBehaviour
     {
         health -= restHealthValue;
 
-        if (health <= 0)
+        if (health == 0)
         {
             OnHealthZero();
         }
-        //Debug.Log(health);
     }
 
     public int ReturnHealth()

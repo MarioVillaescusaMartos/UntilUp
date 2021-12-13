@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BlasterSystem : ShootingSystem
 {
+    private SpriteRenderer _sp;
+
     void Awake()
     {
         InputSystemKeyboard sk;
+        _sp = GetComponent<SpriteRenderer>();
 
         if (TryGetComponent<InputSystemKeyboard>(out sk))
         {
@@ -25,10 +28,19 @@ public class BlasterSystem : ShootingSystem
         GameObject shot = PoolingManager.Instance.GetPooledObject("blasterList");
         if (shot != null && bullets > 0)
         {
-            shot.transform.position = shotPoint.position;
-            shot.transform.rotation = shotPoint.rotation;
             shot.SetActive(true);
-            shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
+            if (_sp.flipX == true)
+            {
+                shot.transform.position = shotPoint[1].position;
+                shot.transform.rotation = shotPoint[1].rotation;
+                shot.GetComponent<Rigidbody2D>().AddForce(-transform.right * shootingdata.fireForce);
+            }
+            if (_sp.flipX == false)
+            {
+                shot.transform.position = shotPoint[0].position;
+                shot.transform.rotation = shotPoint[0].rotation;
+                shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
+            }
         }
     }
 }
