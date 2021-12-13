@@ -20,26 +20,22 @@ public class Engine : MonoBehaviour
     private InputSystemKeyboard _inputSystem;
     private SpriteRenderer _sp;
     private Rigidbody2D _rb;
-    private HealthSystem _healthSystem;
 
     private void Awake()
     {
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _sp = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
-        //_healthSystem = GetComponent<HealthSystem>();
     }
 
     private void OnEnable()
     {
-        _inputSystem.OnJump += Jumping;
-        GetComponent<HealthSystem>().OnHealthZero += ResetPosition;
+        _inputSystem.OnJump += Jumping; 
     }
 
     private void OnDisable()
     {
         _inputSystem.OnJump -= Jumping;
-        GetComponent<HealthSystem>().OnHealthZero -= ResetPosition;
     }
 
     // Update is called once per frame
@@ -84,13 +80,5 @@ public class Engine : MonoBehaviour
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
             secondJump = false;
         }
-    }
-
-    private void ResetPosition()
-    {
-        transform.position = GameObject.Find("RespawnPoint").transform.position;
-        StopAllCoroutines();
-
-        Debug.Log("Reset Poition");
     }
 }
