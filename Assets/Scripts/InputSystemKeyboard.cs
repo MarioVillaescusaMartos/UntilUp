@@ -22,17 +22,17 @@ public class InputSystemKeyboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnFire();//Cuando se pulsa la tecla se llama al evento y se avisan a as clases suscritas
+            OnFire();//Cuando se pulsa la tecla dispara
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-
+            //Cuando se pulsa el jugador hace un tp a una posicion anterior
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            OnJump();
+            OnJump(); //Cuando se pulsa la tecla el jugador salta
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
