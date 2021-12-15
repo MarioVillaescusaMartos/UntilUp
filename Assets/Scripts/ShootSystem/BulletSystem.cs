@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlasterSystem : ShootingSystem
+public class BulletSystem : ShootingSystem
 {
     private SpriteRenderer _sp;
 
     void Awake()
     {
-        InputSystemKeyboard sk;
+        EnemyView ev;
 
         _sp = GetComponent<SpriteRenderer>();
 
-        if (TryGetComponent<InputSystemKeyboard>(out sk))
+        if (TryGetComponent<EnemyView>(out ev))
         {
-            sk.OnFire += Shoot;
+            ev.OnView += Shoot;
         }
     }
 
@@ -26,8 +26,8 @@ public class BlasterSystem : ShootingSystem
         /*var shoot = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         shoot.GetComponent<Rigidbody2D>().AddForce(shotPoint.transform.up * fireForce);*/
 
-        GameObject shot = PoolingManager.Instance.GetPooledObject("blasterList");
-        if (shot != null && bullets > 0)
+        GameObject shot = PoolingManager.Instance.GetPooledObject("bulletList");
+        if (shot != null)
         {
             shot.SetActive(true);
             if (_sp.flipX == true)

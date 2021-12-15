@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class ShotEnemy : MonoBehaviour
+[CreateAssetMenu(menuName = "FSM/Enemy/Actions/Shot")]
+public class ShotEnemy : FSM.Action
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Act(Controller controller)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        controller.SetAnimation("idle", false);
+        controller.SetAnimation("shot", true);
     }
 }

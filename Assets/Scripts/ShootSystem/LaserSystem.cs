@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlasterSystem : ShootingSystem
+public class LaserSystem : ShootingSystem
 {
     private SpriteRenderer _sp;
 
@@ -26,7 +26,7 @@ public class BlasterSystem : ShootingSystem
         /*var shoot = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         shoot.GetComponent<Rigidbody2D>().AddForce(shotPoint.transform.up * fireForce);*/
 
-        GameObject shot = PoolingManager.Instance.GetPooledObject("blasterList");
+        GameObject shot = PoolingManager.Instance.GetPooledObject("laserList");
         if (shot != null && bullets > 0)
         {
             shot.SetActive(true);

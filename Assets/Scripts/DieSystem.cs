@@ -5,26 +5,19 @@ using System;
 
 public class DieSystem : MonoBehaviour
 {
-    private HealthSystem _healthSystem;
-
-    private void Awake()
-    {
-        _healthSystem = GetComponent<HealthSystem>();
-    }
-
+    private bool explode;
     private void OnEnable()
     {
-        _healthSystem.OnHealthZero += ResetPosition;
+        GetComponent<HealthSystem>().OnHealthZero += Die;
     }
 
     private void OnDisable()
     {
-        _healthSystem.OnHealthZero -= ResetPosition;
+        GetComponent<HealthSystem>().OnHealthZero -= Die;
     }
 
-    private void ResetPosition()
+    private void Die()
     {
-        transform.position = GameObject.Find("RespawnPoint").transform.position;
-        StopAllCoroutines();
+        Destroy(gameObject);
     }
 }

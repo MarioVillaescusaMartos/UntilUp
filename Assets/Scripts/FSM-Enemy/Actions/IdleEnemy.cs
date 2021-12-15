@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class IdleEnemy : MonoBehaviour
+[CreateAssetMenu(menuName = "FSM/Enemy/Actions/Idle")]
+public class IdleEnemy : FSM.Action
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Act(Controller controller)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        controller.SetAnimation("idle", true);
+        controller.SetAnimation("shot", false);
     }
 }

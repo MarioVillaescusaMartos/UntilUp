@@ -18,12 +18,14 @@ namespace FSM
         }
         private Animator _animatorController;
         private HealthSystem _healthSystem;
+        private EnemyView _ev;
 
 
         private void Awake()
         {
             _animatorController = GetComponent<Animator>();
             _healthSystem = GetComponent<HealthSystem>();
+            _ev = GetComponent<EnemyView>();
         }
 
         void Update()
@@ -52,6 +54,11 @@ namespace FSM
         public int GetCurrentHealth()
         {
             return _healthSystem.ReturnHealth();
+        }
+
+        public bool GetCurrentHit()
+        {
+            return _ev.ReturnHit();
         }
     }
 }

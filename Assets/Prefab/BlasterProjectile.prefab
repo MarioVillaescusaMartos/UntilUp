@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5018615839671698021}
   - component: {fileID: -5813963788303735257}
   - component: {fileID: 9102286468855053430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlasterProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
