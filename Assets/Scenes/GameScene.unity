@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62959894}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: ShotpointLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,12 +454,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107001243}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 202ae803b869cc042a2d1bb5c07a5e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingdata: {fileID: 0}
+  shootingdata: {fileID: 11400000, guid: b7a759a3d47599041b49528088b40d1b, type: 2}
   shotPoint:
   - {fileID: 2007313496}
   - {fileID: 781916056}
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107001243}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd6d50ad78a974343a4feb9b0483bcbd, type: 3}
   m_Name: 
@@ -2071,7 +2071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967065521}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: ShotpointRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2900,7 +2900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282670401}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: EnemyViewPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3897,7 +3897,7 @@ GameObject:
   - component: {fileID: 2001127013}
   - component: {fileID: 2001127021}
   - component: {fileID: 2001127024}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
