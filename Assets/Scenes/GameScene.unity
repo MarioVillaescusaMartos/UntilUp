@@ -306,7 +306,6 @@ GameObject:
   - component: {fileID: 107001249}
   - component: {fileID: 107001253}
   - component: {fileID: 107001252}
-  - component: {fileID: 107001250}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -429,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc0eca82b32f52448b2d54df28c284f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPressed: 
 --- !u!114 &107001249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,29 +441,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993df026e402c344d97b320d18f0b6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkGround: 0
   jumpSpeed: 5
   groundChecker: {fileID: 1749133155}
   radius: 0.5
   groundMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &107001250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107001243}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202ae803b869cc042a2d1bb5c07a5e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingdata: {fileID: 11400000, guid: b7a759a3d47599041b49528088b40d1b, type: 2}
-  shotPoint:
-  - {fileID: 2007313496}
-  - {fileID: 781916056}
-  bullets: 5
 --- !u!50 &107001251
 Rigidbody2D:
   serializedVersion: 4
@@ -1769,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc0eca82b32f52448b2d54df28c284f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPressed: 
 --- !u!114 &791743611
 MonoBehaviour:
   m_ObjectHideFlags: 0

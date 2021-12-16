@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace FSM
         private Animator _animatorController;
         private HealthSystem _healthSystem;
         private EnemyView _ev;
+        private InputSystemKeyboard _inputSystem;
 
 
         private void Awake()
@@ -26,6 +28,7 @@ namespace FSM
             _animatorController = GetComponent<Animator>();
             _healthSystem = GetComponent<HealthSystem>();
             _ev = GetComponent<EnemyView>();
+            _inputSystem = GetComponent<InputSystemKeyboard>();
         }
 
         void Update()
@@ -59,6 +62,11 @@ namespace FSM
         public bool GetCurrentHit()
         {
             return _ev.ReturnHit();
+        }
+
+        public string GetCurrentKey()
+        {
+            return _inputSystem.ReturnKey();
         }
     }
 }

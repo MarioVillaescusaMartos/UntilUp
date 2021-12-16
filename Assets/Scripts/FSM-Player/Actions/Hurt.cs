@@ -12,7 +12,6 @@ public class Hurt : FSM.Action
         controller.SetAnimation("hurt", true);
         controller.SetAnimation("shootBlaster", false);
         controller.SetAnimation("shootLaser", false);
-        controller.SetAnimation("death", false);
         controller.SetAnimation("run", false);
         controller.SetAnimation("jump", false);
     }

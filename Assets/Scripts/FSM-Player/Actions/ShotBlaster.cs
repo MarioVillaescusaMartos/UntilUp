@@ -12,7 +12,6 @@ public class ShotBlaster : FSM.Action
         controller.SetAnimation("hurt", false);
         controller.SetAnimation("shootBlaster", true);
         controller.SetAnimation("shootLaser", false);
-        controller.SetAnimation("death", false);
         controller.SetAnimation("run", false);
         controller.SetAnimation("jump", false);
     }

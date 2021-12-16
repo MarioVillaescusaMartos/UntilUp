@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 672eb34546c88b943adaa36b82ddc425, type: 3}
-  m_Name: IdleState
+  m_Name: JumpState
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: d4efec9e577c19946974c69c01bb1721, type: 2}
+  - {fileID: 11400000, guid: 49045d49ce1fa3d40a14fd550a4ae082, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: 785ab66ec9f13be4cbcb739207719aba, type: 2}
-    trueState: {fileID: 11400000, guid: 9daf8537ea17a0644b4bc15b1eae1faf, type: 2}
+    trueState: {fileID: 11400000, guid: 15a20d03a892ad64598b84fc62619b45, type: 2}
     falseState: {fileID: 11400000}
-  - decision: {fileID: 11400000, guid: 6859863c70098984b9011d058d1d512c, type: 2}
-    trueState: {fileID: 11400000, guid: e4589f26d6cf9cd44892bc0f86bc03c9, type: 2}
+  - decision: {fileID: 0}
+    trueState: {fileID: 11400000, guid: 15a20d03a892ad64598b84fc62619b45, type: 2}
     falseState: {fileID: 11400000}

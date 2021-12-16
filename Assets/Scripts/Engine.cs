@@ -7,6 +7,7 @@ public class Engine : MonoBehaviour
 {
     private float speed;
     private bool secondJump;
+    public bool checkGround;
 
     [SerializeField]
     private float jumpSpeed;
@@ -65,13 +66,13 @@ public class Engine : MonoBehaviour
 
     public void Jumping()
     {
-        bool t = Physics2D.OverlapCircle(groundChecker.position, radius, groundMask);
-        if (t)
+        checkGround = Physics2D.OverlapCircle(groundChecker.position, radius, groundMask);
+        if (checkGround)
         {
             secondJump = true;
         }
 
-        if (t)
+        if (checkGround)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
         }

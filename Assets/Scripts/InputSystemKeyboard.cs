@@ -13,12 +13,13 @@ public class InputSystemKeyboard : MonoBehaviour
     public event Action OnPause = delegate { };
     public event Action OnJump = delegate { };
 
+    public string keyPressed;
+
     // Update is called once per frame
     void Update()
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
-        //w = Input.GetKeyDown(KeyCode.W);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -39,5 +40,10 @@ public class InputSystemKeyboard : MonoBehaviour
         {
             OnPause(); //Cuando se pulsa la tecla "Esc" el juego se pausa
         }
+    }
+
+    public string ReturnKey()
+    {
+        return keyPressed;
     }
 }
