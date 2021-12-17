@@ -11,12 +11,6 @@ public class SignOnSignInOptions : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GoToSignUp()
     {
         SceneManager.LoadScene("SignUpScene");

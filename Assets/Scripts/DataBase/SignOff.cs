@@ -15,11 +15,16 @@ public class SignOff : MonoBehaviour
     {
         yield return DBManager.username;
 
+        Debug.Log(DBManager.username);
+
         DBManager.LogOut();
+
 
         if (DBManager.username == null)
         {
             SceneManager.LoadScene("SignInScene");
+            Debug.Log(DBManager.username);
+
         }
     }
 }
