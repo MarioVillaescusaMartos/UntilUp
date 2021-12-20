@@ -16,7 +16,7 @@ public class InputSystemKeyboard : MonoBehaviour
     public string keyPressed;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
