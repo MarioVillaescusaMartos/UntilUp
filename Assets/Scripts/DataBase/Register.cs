@@ -9,6 +9,9 @@ public class Register : MonoBehaviour
     public InputField usernameField;
     public InputField passwordField;
 
+    [SerializeField]
+    private Text infoDisplay;
+
     public Button submitRegister;
 
     public void CallRegistration()
@@ -32,6 +35,8 @@ public class Register : MonoBehaviour
         }
         else
         {
+            infoDisplay.text = "User identification failed. Error #" + www.text;
+
             Debug.Log("User creation field. Error #" + www.text);
         }
     }

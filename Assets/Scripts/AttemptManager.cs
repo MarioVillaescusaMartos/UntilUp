@@ -4,11 +4,11 @@ using UnityEngine;
 
 public static class AttemptManager
 {
-    public static int attempt;
+    public static int attempts;
 
     public static void GetAttempt()
     {
-        attempt = AttemptSystem.attempt;
-        Debug.Log(attempt);
+        attempts = AttemptSystem.attempt;
+        //Debug.Log(attempts);
     }
 }

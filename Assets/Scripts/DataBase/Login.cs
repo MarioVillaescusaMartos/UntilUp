@@ -9,6 +9,9 @@ public class Login : MonoBehaviour
     public InputField usernameField;
     public InputField passwordField;
 
+    [SerializeField]
+    private Text infoDisplay;
+
     public Button submitLogin;
 
     public void CallLogin()
@@ -32,6 +35,8 @@ public class Login : MonoBehaviour
         }
         else
         {
+            infoDisplay.text = "User identification failed. Error #" + www.text;
+
             Debug.Log("User identification failed. Error #" + www.text);
         }
     }
