@@ -70,4 +70,8 @@ public class BulletSystem : ShootingSystem
             waiting = true;
         }
     }
+
+    public override void IncreaseBullet(int value)
+    {
+    }
 }

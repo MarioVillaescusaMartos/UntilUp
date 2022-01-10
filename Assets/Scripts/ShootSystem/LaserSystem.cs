@@ -44,4 +44,9 @@ public class LaserSystem : ShootingSystem
             }
         }
     }
+
+    public override void IncreaseBullet(int value)
+    {
+        bullets += value;
+    }
 }

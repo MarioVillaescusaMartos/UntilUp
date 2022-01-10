@@ -11,4 +11,6 @@ public abstract class ShootingSystem : MonoBehaviour
     public int bullets;
 
     public abstract void Shoot();
+
+    public abstract void IncreaseBullet(int value);
 }

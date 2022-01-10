@@ -30,6 +30,7 @@ public class BlasterSystem : ShootingSystem
         if (shot != null && bullets > 0)
         {
             shot.SetActive(true);
+            bullets -= 1;
             if (_sp.flipX == true)
             {
                 shot.transform.position = shotPoint[1].position;
@@ -43,5 +44,10 @@ public class BlasterSystem : ShootingSystem
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
         }
+    }
+
+    public override void IncreaseBullet(int value)
+    {
+        bullets += value;
     }
 }

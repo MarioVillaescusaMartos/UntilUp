@@ -9,7 +9,7 @@ public class HealthSystem : MonoBehaviour
     private int health;
 
     [SerializeField]
-    private int maxHealth = 10;
+    private int maxHealth;
 
     public event Action OnHealthZero = delegate { };
 
@@ -21,6 +21,11 @@ public class HealthSystem : MonoBehaviour
         {
             OnHealthZero();
         }
+    }
+
+    public void IncreaseHealth(int value)
+    {
+        health += value;
     }
 
     public int ReturnHealth()
