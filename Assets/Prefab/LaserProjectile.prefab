@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8099214196506042562}
   - component: {fileID: 8099214196506042563}
   - component: {fileID: 8099214196506042560}
-  - component: {fileID: -2629656644737264149}
   - component: {fileID: 7354469942581848308}
+  - component: {fileID: -2629656644737264149}
   m_Layer: 10
   m_Name: LaserProjectile
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099214196506042561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.76, y: -7.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.21, z: 0.21}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &8099214196506042560
 Animator:
   serializedVersion: 3
@@ -106,19 +106,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2629656644737264149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099214196506042561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4fb3044f8c2f94cbdb91e8628f3b93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restHealth: 1
 --- !u!61 &7354469942581848308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +132,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.3, y: 0.39491308}
   m_EdgeRadius: 0
+--- !u!114 &-2629656644737264149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099214196506042561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4fb3044f8c2f94cbdb91e8628f3b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restHealth: 1

@@ -8,6 +8,9 @@ public class ScoreCanvas : MonoBehaviour
     [SerializeField]
     private Text scoreDisplay;
 
+    private static ScoreSystem _ss;
+
+
     // Start is called before the first frame update
     void Start()
     {

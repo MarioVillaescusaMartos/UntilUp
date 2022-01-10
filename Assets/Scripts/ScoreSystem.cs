@@ -10,5 +10,11 @@ public class ScoreSystem : MonoBehaviour
     public void IncrementScore(int value)
     {
         score += value;
+        Debug.Log(score); 
+    }
+
+    public int ReturnScore()
+    {
+        return score;
     }
 }

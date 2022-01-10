@@ -12,6 +12,7 @@ public class InputSystemKeyboard : MonoBehaviour
     public event Action OnFire = delegate { }; //Se crea el evento pulico para que hayan clases que se puedan enterar de el (OnFire puede ser cualquier nombre)(delegate: forma de decir que es un evento)
     public event Action OnPause = delegate { };
     public event Action OnJump = delegate { };
+    public event Action OnTp = delegate { };
 
     public string keyPressed;
 
@@ -23,17 +24,17 @@ public class InputSystemKeyboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnFire();//Cuando se pulsa la tecla se llama al evento y se avisan a as clases suscritas
+            OnFire();//Cuando se pulsa la tecla "Space" el jugador dispara
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-
+            OnTp();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            OnJump();
+            OnJump(); //Cuando se pulsa la tecla "W" el personaje principal salta, y si se le pulsa una segunda vez salta otra vez en el aire
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
