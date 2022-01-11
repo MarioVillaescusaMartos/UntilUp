@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2951494414810049254}
   - component: {fileID: 1085575295381270516}
   - component: {fileID: -5871167604906992823}
+  - component: {fileID: -6210607389286835461}
   m_Layer: 12
   m_Name: PickableLaser
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473822ba01673540807936c5b4c4bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6210607389286835461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453137730873633856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb9fdf383cb7624c9c8d92b54aa9eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 1
