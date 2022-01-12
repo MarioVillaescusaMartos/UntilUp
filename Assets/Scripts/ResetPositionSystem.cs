@@ -25,6 +25,7 @@ public class ResetPositionSystem : MonoBehaviour
     private void ResetPosition()
     {
         transform.position = GameObject.Find("RespawnPoint").transform.position;
+        _healthSystem.health = 1;
         StopAllCoroutines();
     }
 }

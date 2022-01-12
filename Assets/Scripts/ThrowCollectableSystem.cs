@@ -11,18 +11,25 @@ public class ThrowCollectableSystem : MonoBehaviour
     private Transform collectablePoint;
 
     private int healthValue;
+    [SerializeField]
     private int minValue;
+    [SerializeField]
     private int maxValue;
 
     private GameObject collectable;
+
+    private void Awake()
+    {
+        _healthSystem = GetComponent<HealthSystem>();
+    }
     private void OnEnable()
     {
-        GetComponent<HealthSystem>().OnHealthZero += ThrowCollectable;
+        _healthSystem.OnHealthZero += ThrowCollectable;
     }
 
     private void OnDisable()
     {
-        GetComponent<HealthSystem>().OnHealthZero -= ThrowCollectable;
+        _healthSystem.OnHealthZero -= ThrowCollectable;
     }
     // Start is called before the first frame update
     void Start()
@@ -46,6 +53,8 @@ public class ThrowCollectableSystem : MonoBehaviour
 
         int random = UnityEngine.Random.Range(minValue, maxValue);//0:Heart/1:Blaster/2:Laser
 
+        Debug.Log(random);
+
         if (random == 0)
         {
             collectable = PoolingManager.Instance.GetPooledObject("collectableHeartList");
@@ -64,5 +73,7 @@ public class ThrowCollectableSystem : MonoBehaviour
 
             collectable.SetActive(true);
         }
+
+        collectable.transform.position = collectablePoint.position;
     }
 }
