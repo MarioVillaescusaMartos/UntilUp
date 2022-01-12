@@ -601,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 7709775449307929518, guid: a8d486e4a0ff3bd4bb5e7456e66b85f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7709775449307929518, guid: a8d486e4a0ff3bd4bb5e7456e66b85f5,
         type: 3}
@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 107001249}
   - component: {fileID: 107001253}
   - component: {fileID: 107001252}
+  - component: {fileID: 107001259}
   - component: {fileID: 107001257}
   - component: {fileID: 107001250}
   - component: {fileID: 107001258}
@@ -956,6 +957,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f250830ab8b10b459d59f873ff8a286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &107001259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107001243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202ae803b869cc042a2d1bb5c07a5e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingdata: {fileID: 0}
+  shotPoint:
+  - {fileID: 1278064271}
+  - {fileID: 312004011}
+  bullets: 5
 --- !u!1 &121827688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,8 +2832,8 @@ GameObject:
   - component: {fileID: 791743607}
   - component: {fileID: 791743606}
   - component: {fileID: 791743611}
-  - component: {fileID: 791743612}
   - component: {fileID: 791743610}
+  - component: {fileID: 791743612}
   - component: {fileID: 791743613}
   - component: {fileID: 791743614}
   - component: {fileID: 791743615}
@@ -3159,7 +3177,7 @@ PrefabInstance:
     - target: {fileID: 1175885692826521963, guid: 20f74a8879f9369449fde05d8f1e1c12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1175885692826521963, guid: 20f74a8879f9369449fde05d8f1e1c12,
         type: 3}
@@ -3456,7 +3474,7 @@ PrefabInstance:
     - target: {fileID: 9043654219459370292, guid: de8467e6dec48534b8e6c57a825ff172,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9043654219459370292, guid: de8467e6dec48534b8e6c57a825ff172,
         type: 3}
@@ -5647,7 +5665,7 @@ PrefabInstance:
     - target: {fileID: 5179713715928994284, guid: 5925e12b38358f941aa43cb3934a3786,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5179713715928994284, guid: 5925e12b38358f941aa43cb3934a3786,
         type: 3}
@@ -6338,7 +6356,7 @@ PrefabInstance:
     - target: {fileID: 2600008370448864500, guid: 409dc08767a0bfe498780df98cab1bbe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2600008370448864500, guid: 409dc08767a0bfe498780df98cab1bbe,
         type: 3}
@@ -6412,7 +6430,7 @@ PrefabInstance:
     - target: {fileID: 7709775449307929518, guid: a8d486e4a0ff3bd4bb5e7456e66b85f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7709775449307929518, guid: a8d486e4a0ff3bd4bb5e7456e66b85f5,
         type: 3}
@@ -6481,7 +6499,7 @@ PrefabInstance:
     - target: {fileID: 8714036668513427177, guid: 2a8ff6cbc4b34dc458a1d6bbc5c803e5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8714036668513427177, guid: 2a8ff6cbc4b34dc458a1d6bbc5c803e5,
         type: 3}
@@ -6555,7 +6573,7 @@ PrefabInstance:
     - target: {fileID: 9043654219459370292, guid: de8467e6dec48534b8e6c57a825ff172,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9043654219459370292, guid: de8467e6dec48534b8e6c57a825ff172,
         type: 3}

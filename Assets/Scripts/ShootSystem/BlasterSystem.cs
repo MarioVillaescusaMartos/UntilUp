@@ -14,7 +14,7 @@ public class BlasterSystem : ShootingSystem
 
         if (TryGetComponent<InputSystemKeyboard>(out sk))
         {
-            sk.OnFire += Shoot;
+            sk.OnFire1 += Shoot;
         }
     }
 

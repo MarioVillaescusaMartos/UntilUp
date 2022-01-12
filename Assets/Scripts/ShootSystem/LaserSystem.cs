@@ -12,10 +12,10 @@ public class LaserSystem : ShootingSystem
 
         _sp = GetComponent<SpriteRenderer>();
 
-        /*if (TryGetComponent<InputSystemKeyboard>(out sk))
+        if (TryGetComponent<InputSystemKeyboard>(out sk))
         {
-            sk.OnFire += Shoot;
-        }*/
+            sk.OnFire2 += Shoot;
+        }
     }
 
     void Start()

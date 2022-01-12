@@ -9,7 +9,8 @@ public class InputSystemKeyboard : MonoBehaviour
     public float ver { get; private set; }
     //public bool w { get; private set; }
 
-    public event Action OnFire = delegate { }; //Se crea el evento pulico para que hayan clases que se puedan enterar de el (OnFire puede ser cualquier nombre)(delegate: forma de decir que es un evento)
+    public event Action OnFire1 = delegate { }; //Se crea el evento pulico para que hayan clases que se puedan enterar de el (OnFire puede ser cualquier nombre)(delegate: forma de decir que es un evento)
+    public event Action OnFire2 = delegate { };
     public event Action OnPause = delegate { };
     public event Action OnJump = delegate { };
     public event Action OnTp = delegate { };
@@ -22,9 +23,14 @@ public class InputSystemKeyboard : MonoBehaviour
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
-            OnFire();//Cuando se pulsa la tecla "Space" el jugador dispara
+            OnFire1();//Cuando se pulsa la tecla izquierda del ratón el jugador dispara
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            OnFire2();//Cuando se pulsa la tecla derecha del ratón el jugador dispara
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
