@@ -15,6 +15,7 @@ if (mysqli_num_rows($usernameCheck) != 1)
 	exit();
 }
 
+
 $existsLoginInfo = mysqli_fetch_assoc($usernameCheck);
 $salt = $existsLoginInfo["salt"];
 $hash = $existsLoginInfo["hash"];
@@ -26,7 +27,7 @@ if ($hash != $loginHash)
 	exit();
 }
 
-echo "0\t" .$existsLoginInfo["score"];
+echo "0\t" .$existsLoginInfo["id"];
 
 
 ?>
