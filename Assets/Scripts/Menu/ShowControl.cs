@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
-{ 
+public class ShowControl : MonoBehaviour
+{
     [SerializeField]
     private GameObject gameSettingsUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        
     }
-    public void EnterSettings()
+
+    public void EnterControls()
     {
         gameSettingsUI.SetActive(true);
     }
 
-    public void ExitSettings()
+    public void ExitControls()
     {
         gameSettingsUI.SetActive(false);
     }
