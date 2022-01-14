@@ -30,6 +30,7 @@ public class LaserSystem : ShootingSystem
         if (shot != null && bullets > 0)
         {
             shot.SetActive(true);
+            bullets -= 1;
             if (_sp.flipX == true)
             {
                 shot.transform.position = shotPoint[1].position;
