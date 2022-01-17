@@ -10,7 +10,7 @@ abstract class ScoreIncrement : MonoBehaviour
 
     private ScoreSystem _ss;    
 
-    /*private HealthSystem _healthSystem;
+    private HealthSystem _healthSystem;
 
     private void Awake()
     {
@@ -36,5 +36,5 @@ abstract class ScoreIncrement : MonoBehaviour
             
         }
         //Debug.Log(incrementValue);
-    }*/
+    }
 }

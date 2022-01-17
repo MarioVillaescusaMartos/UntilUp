@@ -20,6 +20,6 @@ public class DamageSystem : MonoBehaviour
             damageHealth.RestHealth(restHealth);
         }
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
