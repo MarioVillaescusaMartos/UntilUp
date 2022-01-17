@@ -20,6 +20,6 @@ public class ScoreCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = "Score: " + ScoreSystem.score;
+        scoreDisplay.text = "Score: " + ScoreSystem.score.ToString();
     }
 }

@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreSystem : MonoBehaviour
+abstract class ScoreSystem : MonoBehaviour
 {
     public static int score;
 
     // Update is called once per frame
-    public void IncrementScore(int value)
+    private void Update()
     {
-        score += value;
-        Debug.Log(score); 
+        
     }
 
     public int ReturnScore()

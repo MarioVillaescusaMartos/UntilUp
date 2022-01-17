@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-abstract class ScoreIncrement : MonoBehaviour
+public class ScoreIncrement : MonoBehaviour
 {
     [SerializeField]
     public static int incrementValue;
@@ -11,6 +11,8 @@ abstract class ScoreIncrement : MonoBehaviour
     private ScoreSystem _ss;    
 
     private HealthSystem _healthSystem;
+
+    private int score;
 
     private void Awake()
     {
@@ -28,13 +30,10 @@ abstract class ScoreIncrement : MonoBehaviour
     }
 
     // Update is called once per frame
-    public static void PassIncrementValue()
+    public void PassIncrementValue()
     {
-        if (TryGetComponent<ScoreSystem>(out _ss))
-        {
-            _ss.IncrementScore(incrementValue);
-            
-        }
-        //Debug.Log(incrementValue);
+        score += incrementValue;
+        Debug.Log(score);
+        //Debug.Log(score);
     }
 }
