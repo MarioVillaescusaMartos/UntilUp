@@ -38,7 +38,10 @@ public class PlatformGeneratorTool : MonoBehaviour
             {
                 int numGenPrefab = UnityEngine.Random.Range(0, prefabPlatform.Length);
                 float numGenSeparationY = UnityEngine.Random.Range(minSeparationY, maxSeparationY);
-                int numGenChoosePlatformOnX = UnityEngine.Random.Range(0, 1);
+                int numGenChoosePlatformOnX = UnityEngine.Random.Range(0, 2);
+
+                Debug.Log(i);
+                Debug.Log(numGenSeparationY);
 
                 if (numGenChoosePlatformOnX == 1)
                 {
@@ -49,14 +52,14 @@ public class PlatformGeneratorTool : MonoBehaviour
                         go.transform.parent = gameo.transform;
 
                     }
-                    Debug.Log("2" + i);
+                    //Debug.Log("2" + i);
                 }
                 else
                 {
                     GameObject go = (GameObject)GameObject.Instantiate(prefabPlatform[numGenPrefab], transform.position + Vector3.up * numGenSeparationY * i
                         , transform.rotation);
                     go.transform.parent = gameo.transform;
-                    Debug.Log("0");
+                    //Debug.Log("0");
                 }
 
                 
