@@ -12,6 +12,9 @@ public class Login : MonoBehaviour
     [SerializeField]
     private Text infoDisplay;
 
+    [SerializeField]
+    private GameObject loadCercleUI;
+
     public Button submitLogin;
 
     public void CallLogin()
@@ -37,12 +40,24 @@ public class Login : MonoBehaviour
         {
             infoDisplay.text = "User identification failed. Error #" + www.text;
 
-            Debug.Log("User identification failed. Error #" + www.text);
+            HideLoad();
+
+            //Debug.Log("User identification failed. Error #" + www.text);
         }
     }
 
     public void VerifyInputs()
     {
         submitLogin.interactable = (usernameField.text.Length >= 1 && passwordField.text.Length >= 1);
+    }
+
+    public void ShowLoad()
+    {
+        loadCercleUI.SetActive(true);
+    }
+
+    public void HideLoad()
+    {
+        loadCercleUI.SetActive(false);
     }
 }

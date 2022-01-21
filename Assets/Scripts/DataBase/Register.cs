@@ -12,6 +12,9 @@ public class Register : MonoBehaviour
     [SerializeField]
     private Text infoDisplay;
 
+    [SerializeField]
+    private GameObject loadCercleUI;
+
     public Button submitRegister;
 
     public void CallRegistration()
@@ -37,12 +40,24 @@ public class Register : MonoBehaviour
         {
             infoDisplay.text = "User identification failed. Error #" + www.text;
 
-            Debug.Log("User creation field. Error #" + www.text);
+            HideLoad();
+
+            //Debug.Log("User creation field. Error #" + www.text);
         }
     }
 
     public void VerifyInputs()
     {
         submitRegister.interactable = (usernameField.text.Length >= 1 && passwordField.text.Length >= 1);
+    }
+
+    public void ShowLoad()
+    {
+        loadCercleUI.SetActive(true);
+    }
+
+    public void HideLoad()
+    {
+        loadCercleUI.SetActive(false);
     }
 }

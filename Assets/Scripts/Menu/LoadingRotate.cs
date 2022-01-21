@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LoadingRotate : MonoBehaviour
 {
+    [SerializeField]
+    private float rotateSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class LoadingRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 5), Space.World);
+        transform.Rotate(new Vector3(0, 0, rotateSpeed), Space.World);
     }
 }

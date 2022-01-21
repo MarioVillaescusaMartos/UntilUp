@@ -12,15 +12,12 @@ public class PlatformGeneratorTool : MonoBehaviour
     [SerializeField]
     private int numPlatforms;
 
-    [SerializeField]
-    private float minSeparationY;
-    [SerializeField]
-    private float maxSeparationY;
-    [SerializeField]
-    private float separationX;
+    
 
     [SerializeField]
     private bool generatePlatforms;
+
+    private int prefabPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -37,37 +34,37 @@ public class PlatformGeneratorTool : MonoBehaviour
             for (int i = 0; i < numPlatforms; i++)
             {
                 int numGenPrefab = UnityEngine.Random.Range(0, prefabPlatform.Length);
-                float numGenSeparationY = UnityEngine.Random.Range(minSeparationY, maxSeparationY);
+                
                 int numGenChoosePlatformOnX = UnityEngine.Random.Range(0, 2);
 
-                Debug.Log(i);
-                Debug.Log(numGenSeparationY);
+
+                
 
                 if (numGenChoosePlatformOnX == 1)
                 {
                     for (int r = 0; r < 2; r++)
                     {
-                        GameObject go = (GameObject)GameObject.Instantiate(prefabPlatform[numGenPrefab], transform.position + Vector3.up * numGenSeparationY * i
+                        GameObject go = (GameObject)GameObject.Instantiate(prefabPlatform[numGenPrefab], transform.position + Vector3.up * i
                             , transform.rotation);
                         go.transform.parent = gameo.transform;
 
                     }
-                    //Debug.Log("2" + i);
                 }
                 else
                 {
-                    GameObject go = (GameObject)GameObject.Instantiate(prefabPlatform[numGenPrefab], transform.position + Vector3.up * numGenSeparationY * i
+                    GameObject go = (GameObject)GameObject.Instantiate(prefabPlatform[numGenPrefab], transform.position + Vector3.up * i
                         , transform.rotation);
                     go.transform.parent = gameo.transform;
-                    //Debug.Log("0");
                 }
 
                 
 
             }
+
+            generatePlatforms = false;
         }
 
-        generatePlatforms = false;
+        
     }
 
     public void DoPlatformGenerator()
