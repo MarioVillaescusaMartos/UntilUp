@@ -6,10 +6,12 @@ using System;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField]
-    public int health;
+    public static int health;
 
     [SerializeField]
-    private int maxHealth;
+    public int minHealth;
+    [SerializeField]
+    private int maxHealth = 3;
 
     public event Action OnHealthZero = delegate { };
 
@@ -20,6 +22,7 @@ public class HealthSystem : MonoBehaviour
         if (health <= 0)
         {
             OnHealthZero();
+            health = 1;
         }
     }
 

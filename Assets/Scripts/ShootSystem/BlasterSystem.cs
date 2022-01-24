@@ -6,6 +6,7 @@ public class BlasterSystem : ShootingSystem
 {
     private SpriteRenderer _sp;
 
+
     void Awake()
     {
         InputSystemKeyboard sk;
@@ -20,6 +21,7 @@ public class BlasterSystem : ShootingSystem
 
     void Start()
     {
+        bullets = DBManager.blasterbullet;
     }
     public override void Shoot()
     {
@@ -43,11 +45,18 @@ public class BlasterSystem : ShootingSystem
                 shot.transform.rotation = shotPoint[0].rotation;
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
+            Debug.Log(bullets);
+
         }
     }
 
     public override void IncreaseBullet(int value)
     {
         bullets += value;
+    }
+
+    public int ReturnBlasterBullet()
+    {
+        return bullets;
     }
 }

@@ -8,7 +8,7 @@ public abstract class ShootingSystem : MonoBehaviour
 
     public Transform[] shotPoint;
 
-    public int bullets;
+    public static int bullets = 5;
 
     public abstract void Shoot();
 

@@ -28,12 +28,13 @@ public class Login : MonoBehaviour
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
         WWW www = new WWW("http://localhost/sqlconnect/login.php", form);
-         yield return www;
+        yield return www;
 
         if (www.text[0] == '0')
         {
             DBManager.username = usernameField.text;
             DBManager.id = int.Parse(www.text.Split('\t')[1]);
+
             SceneManager.LoadScene("MainMenuScene");
         }
         else

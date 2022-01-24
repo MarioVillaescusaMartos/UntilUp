@@ -5,7 +5,7 @@ include("connection.php");
 $username = $_POST["name"];
 $password = $_POST["password"];
 
-$usernameCheckQuery = "SELECT * FROM players WHERE username='".$username."';";
+$usernameCheckQuery = "SELECT * FROM players pl, gamestats gs WHERE pl.username='".$username."' AND gs.id = pl.id;";
 
 $usernameCheck = mysqli_query($conn, $usernameCheckQuery);
 

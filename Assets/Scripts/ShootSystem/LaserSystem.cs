@@ -20,6 +20,7 @@ public class LaserSystem : ShootingSystem
 
     void Start()
     {
+        bullets = DBManager.blasterbullet;
     }
     public override void Shoot()
     {
@@ -43,11 +44,18 @@ public class LaserSystem : ShootingSystem
                 shot.transform.rotation = shotPoint[0].rotation;
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
+
+            Debug.Log(bullets);
         }
     }
 
     public override void IncreaseBullet(int value)
     {
         bullets += value;
+    }
+
+    public int ReturnLaserBullet()
+    {
+        return bullets;
     }
 }

@@ -37,4 +37,9 @@ public class AttemptSystem : MonoBehaviour
     {
         attempt += increment;
     }
+
+    public int ReturnAttempt()
+    {
+        return attempt;
+    }
 }

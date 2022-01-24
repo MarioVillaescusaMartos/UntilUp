@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2021 a las 12:25:48
+-- Tiempo de generación: 24-01-2022 a las 14:29:35
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -34,18 +34,18 @@ CREATE TABLE `gamestats` (
   `id_player` int(10) NOT NULL,
   `id` int(10) NOT NULL,
   `score` int(100) NOT NULL,
-  `attempt` int(100) NOT NULL
+  `attempt` int(100) NOT NULL,
+  `health` int(1) NOT NULL,
+  `blasterbullet` int(3) NOT NULL,
+  `laserbullet` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `gamestats`
 --
 
-INSERT INTO `gamestats` (`id_player`, `id`, `score`, `attempt`) VALUES
-(1, 1, 5, 0),
-(3, 2, 16, 0),
-(2, 3, 27, 0),
-(3, 4, 6, 0);
+INSERT INTO `gamestats` (`id_player`, `id`, `score`, `attempt`, `health`, `blasterbullet`, `laserbullet`) VALUES
+(0, 1, 0, 0, 1, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -66,9 +66,7 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `username`, `hash`, `salt`) VALUES
-(1, 'm', '$5$rounds=5000$steamedhamsm$c7CUesQ15EFDi8wKK/IRHXT6YYbFYAUK5oJZ.DkV4p2', '$5$rounds=5000$steamedhamsm$'),
-(2, 'k', '$5$rounds=5000$steamedhamsk$IKxeIXjs60HQSXrZAN4eHwa1ZaKBQf8qh7ePWKnwmZ6', '$5$rounds=5000$steamedhamsk$'),
-(3, 'z', '$5$rounds=5000$steamedhamsz$d.d50h74CA34i9oSceg5LELIJ4eHBQhY5lD3JZx0iB/', '$5$rounds=5000$steamedhamsz$');
+(1, 'j', '$5$rounds=5000$steamedhamsj$4J6s/RgF6y553.T/dpwuZqejPimym6hbH7s2G63cvD6', '$5$rounds=5000$steamedhamsj$');
 
 --
 -- Índices para tablas volcadas
@@ -79,7 +77,7 @@ INSERT INTO `players` (`id`, `username`, `hash`, `salt`) VALUES
 --
 ALTER TABLE `gamestats`
   ADD PRIMARY KEY (`id`,`id_player`),
-  ADD KEY `id_player` (`id_player`);
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indices de la tabla `players`
@@ -98,13 +96,13 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT de la tabla `gamestats`
 --
 ALTER TABLE `gamestats`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

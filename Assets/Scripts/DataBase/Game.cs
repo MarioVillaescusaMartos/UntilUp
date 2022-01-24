@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
     public Text playerDisplay;
     public Text idDisplay;
     public Text scoreDisplay;
+    public Text healthDisplay;
 
     public int score = 3;
 
@@ -29,7 +30,11 @@ public class Game : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", DBManager.username);
         form.AddField("id", DBManager.id);
-        form.AddField("score", score);
+        form.AddField("score", ScoreSystem.score);
+        form.AddField("attempt", AttemptSystem.attempt);
+        form.AddField("health", HealthSystem.health);
+        form.AddField("blasterbullet", BlasterSystem.bullets);
+        form.AddField("laserbullet", LaserSystem.bullets);
 
         WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
         yield return www;

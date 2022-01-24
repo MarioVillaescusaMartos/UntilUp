@@ -28,6 +28,11 @@ public class Register : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
+        form.AddField("score", 0);
+        form.AddField("attempt", 0);
+        form.AddField("health", 1);
+        form.AddField("blasterbullet", BlasterSystem.bullets);
+        form.AddField("laserbullet", LaserSystem.bullets);
         WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
         yield return www;
 
