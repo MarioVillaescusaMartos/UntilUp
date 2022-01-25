@@ -992,6 +992,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 791743621}
+        m_TargetAssemblyTypeName: SetOffMenuObjects, Assembly-CSharp
+        m_MethodName: UnShowGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &83377228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,8 +1370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05099f71da67c584ebbc60d0df32f6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHealth: 0
-  maxHealth: 0
+  minHealth: 1
+  maxHealth: 3
 --- !u!114 &107001248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3981,7 +3993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &453638783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4026,85 +4038,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b99c9f1c947a8b498863342cf046d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCamera: {fileID: 1278807443}
+  gameCamera: {fileID: 0}
   platforms:
-  - {fileID: 2052469993}
-  - {fileID: 1911007274}
-  - {fileID: 1712050238}
-  - {fileID: 1676734690}
-  - {fileID: 1054646162}
-  - {fileID: 2035116539}
-  - {fileID: 566337335}
-  - {fileID: 1330599670}
-  - {fileID: 1686043385}
-  - {fileID: 1056093937}
-  - {fileID: 175022204}
-  - {fileID: 707468895}
-  - {fileID: 228410287}
-  - {fileID: 143184688}
-  - {fileID: 960414081}
-  - {fileID: 1954795024}
-  - {fileID: 2026234126}
-  - {fileID: 80179517}
-  - {fileID: 1650481833}
-  - {fileID: 9646866}
-  - {fileID: 877249646}
-  - {fileID: 1504322025}
-  - {fileID: 1290720247}
-  - {fileID: 1711488182}
-  - {fileID: 1969614625}
-  - {fileID: 819090141}
-  - {fileID: 1145922130}
-  - {fileID: 420501340}
-  - {fileID: 193504495}
-  - {fileID: 1707611883}
-  - {fileID: 117772954}
-  - {fileID: 982961470}
-  - {fileID: 1373110470}
-  - {fileID: 527474311}
-  - {fileID: 224045504}
-  - {fileID: 821999045}
-  - {fileID: 1153441452}
-  - {fileID: 1616868018}
-  - {fileID: 557562349}
-  - {fileID: 1760472005}
-  - {fileID: 1789138554}
-  - {fileID: 1635579481}
-  - {fileID: 38226476}
-  - {fileID: 71758435}
-  - {fileID: 1538679891}
-  - {fileID: 1501544059}
-  - {fileID: 491899404}
-  - {fileID: 1339704314}
-  - {fileID: 1396517386}
-  - {fileID: 1058768776}
-  - {fileID: 638212424}
-  - {fileID: 1317871495}
-  - {fileID: 737522643}
-  - {fileID: 131121730}
-  - {fileID: 638835749}
-  - {fileID: 1387570732}
-  - {fileID: 506237342}
-  - {fileID: 1896764208}
-  - {fileID: 819484510}
-  - {fileID: 1082171520}
-  - {fileID: 222424527}
-  - {fileID: 962818495}
-  - {fileID: 2109962485}
-  - {fileID: 913617298}
-  - {fileID: 23195413}
-  - {fileID: 691239914}
-  - {fileID: 950877669}
-  - {fileID: 1299133303}
-  - {fileID: 1171186156}
-  - {fileID: 1848599387}
-  - {fileID: 395431605}
-  - {fileID: 1074199512}
-  - {fileID: 543094481}
-  - {fileID: 767024955}
-  - {fileID: 1459367159}
-  - {fileID: 449445711}
-  - {fileID: 88508417}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   minSeparationY: 3.5
   maxSeparationY: 5.3
@@ -5426,7 +5438,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.4422369}
+  m_Offset: {x: 0, y: 184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5437,7 +5449,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.2866}
+  m_Size: {x: 1, y: 375}
   m_EdgeRadius: 0
 --- !u!4 &621770574
 Transform:
@@ -7022,6 +7034,7 @@ GameObject:
   - component: {fileID: 791743618}
   - component: {fileID: 791743617}
   - component: {fileID: 791743619}
+  - component: {fileID: 791743621}
   m_Layer: 5
   m_Name: CanvasGame
   m_TagString: Untagged
@@ -7264,6 +7277,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartDisplay: {fileID: 737887598}
+--- !u!114 &791743621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791743605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e87922c1e8fb84b876be643dbc0790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayUI: {fileID: 1127640722}
 --- !u!1 &811311456
 GameObject:
   m_ObjectHideFlags: 0
@@ -8202,6 +8228,18 @@ MonoBehaviour:
       - m_Target: {fileID: 791743618}
         m_TargetAssemblyTypeName: ShowControl, Assembly-CSharp
         m_MethodName: EnterControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 791743621}
+        m_TargetAssemblyTypeName: SetOffMenuObjects, Assembly-CSharp
+        m_MethodName: UnShowGameObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10550,7 +10588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.24353, y: -104.97916}
+  m_AnchoredPosition: {x: 0, y: -105}
   m_SizeDelta: {x: 2431.408, y: 89.9583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1130540565
@@ -11318,7 +11356,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.4422369}
+  m_Offset: {x: 0, y: 184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11329,7 +11367,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.2866}
+  m_Size: {x: 1, y: 375}
   m_EdgeRadius: 0
 --- !u!4 &1245237915
 Transform:
@@ -11626,6 +11664,18 @@ MonoBehaviour:
       - m_Target: {fileID: 791743612}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: EnterSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 791743621}
+        m_TargetAssemblyTypeName: SetOffMenuObjects, Assembly-CSharp
+        m_MethodName: UnShowGameObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13984,6 +14034,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 791743621}
+        m_TargetAssemblyTypeName: SetOffMenuObjects, Assembly-CSharp
+        m_MethodName: UnShowGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1583868226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15203,7 +15265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710213497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.427, y: 340.455, z: 0}
+  m_LocalPosition: {x: -0.427, y: 5.03, z: 0}
   m_LocalScale: {x: 0.475, y: 0.50013, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15927,10 +15989,10 @@ RectTransform:
   m_Father: {fileID: 652265265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -377}
-  m_SizeDelta: {x: 473.7407, y: 161.4818}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 260.24}
+  m_SizeDelta: {x: 473.7407, y: 161.48181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854444860
 MonoBehaviour:
