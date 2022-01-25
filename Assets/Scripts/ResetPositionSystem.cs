@@ -5,11 +5,11 @@ using System;
 
 public class ResetPositionSystem : MonoBehaviour
 {
-    private HealthSystem _healthSystem;
+    private PlayerHealthSystem _healthSystem;
 
     private void Awake()
     {
-        _healthSystem = GetComponent<HealthSystem>();
+        _healthSystem = GetComponent<PlayerHealthSystem>();
     }
 
     private void OnEnable()

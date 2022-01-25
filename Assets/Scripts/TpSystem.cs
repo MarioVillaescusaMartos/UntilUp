@@ -16,13 +16,13 @@ public class TpSystem : MonoBehaviour
     private void OnEnable()
     {
         GetComponent<InputSystemKeyboard>().OnTp += Tp;
-        GetComponent<HealthSystem>().OnHealthZero += ResetTp;
+        GetComponent<PlayerHealthSystem>().OnHealthZero += ResetTp;
     }
 
     private void OnDisable()
     {
         GetComponent<InputSystemKeyboard>().OnTp -= Tp;
-        GetComponent<HealthSystem>().OnHealthZero -= ResetTp;
+        GetComponent<PlayerHealthSystem>().OnHealthZero -= ResetTp;
     }
 
     // Start is called before the first frame update

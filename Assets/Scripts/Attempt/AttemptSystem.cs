@@ -10,11 +10,11 @@ public class AttemptSystem : MonoBehaviour
     [SerializeField]
     private int increment;
 
-    private HealthSystem _healthSystem;
+    private PlayerHealthSystem _healthSystem;
 
     private void Awake()
     {
-        _healthSystem = GetComponent<HealthSystem>();
+        _healthSystem = GetComponent<PlayerHealthSystem>();
     }
 
     private void OnEnable()

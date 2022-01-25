@@ -18,7 +18,6 @@ namespace FSM
             ActiveAI = true;  //Para activar AI
         }
         private Animator _animatorController;
-        private HealthSystem _healthSystem;
         private EnemyView _ev;
         private InputSystemKeyboard _inputSystem;
 
@@ -26,7 +25,6 @@ namespace FSM
         private void Awake()
         {
             _animatorController = GetComponent<Animator>();
-            _healthSystem = GetComponent<HealthSystem>();
             _ev = GetComponent<EnemyView>();
             _inputSystem = GetComponent<InputSystemKeyboard>();
         }
@@ -52,11 +50,6 @@ namespace FSM
         public void SetAnimation(string animation, bool value)
         {
             _animatorController.SetBool(animation, value);
-        }
-
-        public int GetCurrentHealth()
-        {
-            return _healthSystem.ReturnHealth();
         }
 
         public bool GetCurrentHit()

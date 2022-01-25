@@ -5,7 +5,8 @@ using System;
 
 public class ThrowCollectableSystem : MonoBehaviour
 {
-    private HealthSystem _healthSystem;
+    private EnemyHealthSystem _eHealthSystem;
+    private PlayerHealthSystem _pHealthSystem;
 
     [SerializeField]
     private Transform collectablePoint;
@@ -20,16 +21,16 @@ public class ThrowCollectableSystem : MonoBehaviour
 
     private void Awake()
     {
-        _healthSystem = GetComponent<HealthSystem>();
+        _eHealthSystem = GetComponent<EnemyHealthSystem>();
     }
     private void OnEnable()
     {
-        _healthSystem.OnHealthZero += ThrowCollectable;
+        _eHealthSystem.OnHealthZero += ThrowCollectable;
     }
 
     private void OnDisable()
     {
-        _healthSystem.OnHealthZero -= ThrowCollectable;
+        _eHealthSystem.OnHealthZero -= ThrowCollectable;
     }
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class ThrowCollectableSystem : MonoBehaviour
     // Update is called once per frame
     private void ThrowCollectable()
     {
-        healthValue = _healthSystem.ReturnHealth();
+        healthValue = PlayerHealthSystem.health;
 
         if (healthValue < 3)
         {
@@ -67,7 +68,7 @@ public class ThrowCollectableSystem : MonoBehaviour
 
             collectable.SetActive(true);
         }
-        else
+        else if (random == 2)
         {
             collectable = PoolingManager.Instance.GetPooledObject("collectableLaserList");
 

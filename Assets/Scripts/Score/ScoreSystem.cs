@@ -10,13 +10,13 @@ public class ScoreSystem : MonoBehaviour
 
     private ScoreSystem _ss;    
 
-    private HealthSystem _healthSystem;
+    private EnemyHealthSystem _healthSystem;
 
     public static int score;
 
     private void Awake()
     {
-        _healthSystem = GetComponent<HealthSystem>();
+        _healthSystem = GetComponent<EnemyHealthSystem>();
     }
 
     private void OnEnable()

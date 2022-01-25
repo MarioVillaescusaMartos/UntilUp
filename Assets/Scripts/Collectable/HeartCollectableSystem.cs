@@ -18,7 +18,7 @@ public class HeartCollectableSystem : CollectableSystem
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out HealthSystem healthHeart))
+        if (collision.TryGetComponent(out PlayerHealthSystem healthHeart))
         {
             healthHeart.IncreaseHealth(increaseValue);
         }

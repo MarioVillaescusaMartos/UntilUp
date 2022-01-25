@@ -3,19 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HealthSystem : MonoBehaviour
+public class PlayerHealthSystem : HealthSystem
 {
-    [SerializeField]
-    public static int health;
-
-    [SerializeField]
-    public int minHealth;
-    [SerializeField]
-    private int maxHealth = 3;
-
     public event Action OnHealthZero = delegate { };
 
-    public void RestHealth(int restHealthValue)
+    public override void RestHealth(int restHealthValue)
     {
         health -= restHealthValue;
 
@@ -24,15 +16,24 @@ public class HealthSystem : MonoBehaviour
             OnHealthZero();
             health = 1;
         }
+
+        SendHealth();
     }
 
     public void IncreaseHealth(int value)
     {
         health += value;
+
+        SendHealth();
     }
 
     public int ReturnHealth()
     {
         return health;
+    }
+
+    public void SendHealth()
+    {
+        HeartManager.heart = health;
     }
 }
