@@ -11,6 +11,9 @@ public class Game : MonoBehaviour
     public Text scoreDisplay;
     public Text healthDisplay;
 
+    [SerializeField]
+    private Text infoDisplay;
+
     public int score = 3;
 
     private void Awake()
@@ -40,6 +43,8 @@ public class Game : MonoBehaviour
         yield return www;
         if (www.text == "0")
         {
+            infoDisplay.text = "Game Saved!";
+
             Debug.Log("Game saved");
         }
         else
