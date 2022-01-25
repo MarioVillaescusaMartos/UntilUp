@@ -36,6 +36,8 @@ public class AttemptSystem : MonoBehaviour
     public void IncrementAttempt()
     {
         attempt += increment;
+
+        AttemptManager.attempts = attempt;
     }
 
     public int ReturnAttempt()

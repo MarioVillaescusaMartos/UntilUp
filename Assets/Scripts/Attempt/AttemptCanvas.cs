@@ -17,6 +17,6 @@ public class AttemptCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attemptDisplay.text = "Attempt: " + AttemptSystem.attempt;
+        attemptDisplay.text = "Attempt: " + AttemptSystem.attempt.ToString();
     }
 }
