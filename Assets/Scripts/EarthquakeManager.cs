@@ -8,8 +8,9 @@ public class EarthquakeManager : MonoBehaviour
     [SerializeField]
     private float waitTimeStart;
     [SerializeField]
-    private float waitTimeEnd;
+    public float waitTimeEnd;
 
+    public static float numWaitTimeEnd;
     public bool waitingToStart;
     public bool waitingToEnd;
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class EarthquakeManager : MonoBehaviour
                 waitingToStart = true;
                 waitingToEnd = false;
                 waitTimeEnd = UnityEngine.Random.Range(5, 30);
+                numWaitTimeEnd = waitTimeEnd;
 
                 OnTimerEnds(waitingToStart);
             }

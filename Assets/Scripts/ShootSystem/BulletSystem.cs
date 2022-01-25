@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BulletSystem : ShootingSystem
 {
@@ -11,6 +12,8 @@ public class BulletSystem : ShootingSystem
 
     private bool waiting;
     private float saveWaitingTime;
+
+    public event Action OnShot = delegate { };
 
     void Awake()
     {
@@ -68,6 +71,8 @@ public class BulletSystem : ShootingSystem
             }
 
             waiting = true;
+
+            OnShot();
         }
     }
 

@@ -22,6 +22,8 @@ public class Engine : MonoBehaviour
     private SpriteRenderer _sp;
     private Rigidbody2D _rb;
 
+    public event Action OnJumped = delegate { };
+
     private void Awake()
     {
         _inputSystem = GetComponent<InputSystemKeyboard>();
@@ -67,19 +69,20 @@ public class Engine : MonoBehaviour
     public void Jumping()
     {
         checkGround = Physics2D.OverlapCircle(groundChecker.position, radius, groundMask);
-        if (checkGround)
-        {
-            secondJump = true;
-        }
 
         if (checkGround)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
+            secondJump = true;
+
+            OnJumped();
         }
         else if (secondJump)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
             secondJump = false;
+
+            OnJumped();
         }
     }
 }

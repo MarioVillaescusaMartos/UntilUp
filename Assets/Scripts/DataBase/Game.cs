@@ -41,7 +41,6 @@ public class Game : MonoBehaviour
         if (www.text == "0")
         {
             Debug.Log("Game saved");
-            SceneManager.LoadScene("MainMenuScene");
         }
         else
         {

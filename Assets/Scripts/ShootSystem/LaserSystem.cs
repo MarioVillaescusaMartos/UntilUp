@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LaserSystem : ShootingSystem
 {
     private SpriteRenderer _sp;
+
+    public event Action OnShot = delegate { };
 
     void Awake()
     {
@@ -46,6 +49,8 @@ public class LaserSystem : ShootingSystem
             }
 
             Debug.Log(bullets);
+
+            OnShot();
         }
     }
 

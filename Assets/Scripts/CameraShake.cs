@@ -40,7 +40,6 @@ public class CameraShake : MonoBehaviour
     {
         if (!activeShake)
         {
-            //originalPos = gameCamera.localPosition;
             StartCoroutine(GenerateCameraShake());
         }
         else
