@@ -17,35 +17,44 @@ public class InputSystemKeyboard : MonoBehaviour
 
     public string keyPressed;
 
+    private bool pause;
+    private bool gameOver;
+
     // Update is called once per frame
     private void Update()
     {
-        hor = Input.GetAxis("Horizontal");
-        ver = Input.GetAxis("Vertical");
+        pause = PauseManager.pauseMode;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (!pause)
         {
-            OnFire1();//Cuando se pulsa la tecla izquierda del ratón el jugador dispara
-        }
+            Debug.Log(pause);
+            hor = Input.GetAxis("Horizontal");
+            ver = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            OnFire2();//Cuando se pulsa la tecla derecha del ratón el jugador dispara
-        }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                OnFire1();//Cuando se pulsa la tecla izquierda del ratón el jugador dispara
+            }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            OnTp();
-        }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                OnFire2();//Cuando se pulsa la tecla derecha del ratón el jugador dispara
+            }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            OnJump(); //Cuando se pulsa la tecla "W" el personaje principal salta, y si se le pulsa una segunda vez salta otra vez en el aire
-        }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                OnTp();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OnPause(); //Cuando se pulsa la tecla "Esc" el juego se pausa
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                OnJump(); //Cuando se pulsa la tecla "W" el personaje principal salta, y si se le pulsa una segunda vez salta otra vez en el aire
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnPause(); //Cuando se pulsa la tecla "Esc" el juego se pausa
+            }
         }
     }
 

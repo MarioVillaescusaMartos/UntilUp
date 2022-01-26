@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PauseManager.pauseMode = gameIsPaused;
     }
 
     void PauseOn()

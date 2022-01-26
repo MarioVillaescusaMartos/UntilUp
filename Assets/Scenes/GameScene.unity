@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHealth: 1
   maxHealth: 3
-  INVENCIBLE: 1
+  INVENCIBLE: 0
 --- !u!114 &107001248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11811,6 +11811,7 @@ GameObject:
   - component: {fileID: 1270006801}
   - component: {fileID: 1270006800}
   - component: {fileID: 1270006799}
+  - component: {fileID: 1270006802}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -11890,6 +11891,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270006802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270006798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b02959c9ed4ac48bc5739dbabff2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270389664
 GameObject:
   m_ObjectHideFlags: 0
@@ -14569,6 +14582,7 @@ GameObject:
   - component: {fileID: 1599000886}
   - component: {fileID: 1599000888}
   - component: {fileID: 1599000887}
+  - component: {fileID: 1599000889}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -14645,6 +14659,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1599000889
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599000885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1605832653
 GameObject:
   m_ObjectHideFlags: 0
@@ -17376,7 +17407,6 @@ GameObject:
   - component: {fileID: 1916503177}
   - component: {fileID: 1916503176}
   - component: {fileID: 1916503175}
-  - component: {fileID: 1916503178}
   - component: {fileID: 1916503179}
   m_Layer: 0
   m_Name: EarthquakeManager
@@ -17423,6 +17453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTimeStart: 5
   waitTimeEnd: 30
+  intensity: 7
   waitingToStart: 0
   waitingToEnd: 0
 --- !u!4 &1916503177
@@ -17449,20 +17480,6 @@ Transform:
   m_Father: {fileID: 1278807444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1916503178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916503174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b02959c9ed4ac48bc5739dbabff2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameCamera: {fileID: 1278807444}
-  amplitude: 0.5
 --- !u!114 &1916503179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17470,7 +17487,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916503174}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9612688b9748ed54a8f824a889dffa57, type: 3}
   m_Name: 
@@ -18873,6 +18890,18 @@ MonoBehaviour:
       - m_Target: {fileID: 791743622}
         m_TargetAssemblyTypeName: TryAgainMenu, Assembly-CSharp
         m_MethodName: TryAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 791743611}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

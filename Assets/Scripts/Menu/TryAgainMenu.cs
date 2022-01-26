@@ -11,8 +11,14 @@ public class TryAgainMenu : MonoBehaviour
     [SerializeField]
     private Toggle toggleUI;
 
+
     // Start is called before the first frame update
     void Start()
+    {
+
+    }
+
+    public void Update()
     {
         
     }
