@@ -7,7 +7,9 @@ public class BlasterSystem : ShootingSystem
 {
     private SpriteRenderer _sp;
 
-   public event Action OnShot = delegate { };
+    public event Action OnShot = delegate { };
+
+    private int numBBullets;
 
     void Awake()
     {
@@ -23,7 +25,7 @@ public class BlasterSystem : ShootingSystem
 
     void Start()
     {
-        bullets = DBManager.blasterbullet;
+        numBBullets = DBManager.blasterbullet;
     }
     public override void Shoot()
     {
@@ -31,10 +33,10 @@ public class BlasterSystem : ShootingSystem
         shoot.GetComponent<Rigidbody2D>().AddForce(shotPoint.transform.up * fireForce);*/
 
         GameObject shot = PoolingManager.Instance.GetPooledObject("blasterList");
-        if (shot != null && bullets > 0)
+        if (shot != null && numBBullets > 0)
         {
             shot.SetActive(true);
-            bullets -= 1;
+            numBBullets -= 1;
             if (_sp.flipX == true)
             {
                 shot.transform.position = shotPoint[1].position;
@@ -47,7 +49,7 @@ public class BlasterSystem : ShootingSystem
                 shot.transform.rotation = shotPoint[0].rotation;
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
-            Debug.Log(bullets);
+            Debug.Log(numBBullets);
 
             OnShot();
         }
@@ -55,11 +57,11 @@ public class BlasterSystem : ShootingSystem
 
     public override void IncreaseBullet(int value)
     {
-        bullets += value;
+        numBBullets += value;
     }
 
     public int ReturnBlasterBullet()
     {
-        return bullets;
+        return numBBullets;
     }
 }

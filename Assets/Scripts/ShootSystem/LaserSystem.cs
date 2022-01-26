@@ -9,6 +9,8 @@ public class LaserSystem : ShootingSystem
 
     public event Action OnShot = delegate { };
 
+    private int numLBullets;
+
     void Awake()
     {
         InputSystemKeyboard sk;
@@ -23,7 +25,7 @@ public class LaserSystem : ShootingSystem
 
     void Start()
     {
-        bullets = DBManager.blasterbullet;
+        numLBullets = DBManager.blasterbullet;
     }
     public override void Shoot()
     {
@@ -31,10 +33,10 @@ public class LaserSystem : ShootingSystem
         shoot.GetComponent<Rigidbody2D>().AddForce(shotPoint.transform.up * fireForce);*/
 
         GameObject shot = PoolingManager.Instance.GetPooledObject("laserList");
-        if (shot != null && bullets > 0)
+        if (shot != null && numLBullets > 0)
         {
             shot.SetActive(true);
-            bullets -= 1;
+            numLBullets -= 1;
             if (_sp.flipX == true)
             {
                 shot.transform.position = shotPoint[1].position;
@@ -48,7 +50,7 @@ public class LaserSystem : ShootingSystem
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
 
-            Debug.Log(bullets);
+            Debug.Log(numLBullets);
 
             OnShot();
         }
@@ -56,11 +58,11 @@ public class LaserSystem : ShootingSystem
 
     public override void IncreaseBullet(int value)
     {
-        bullets += value;
+        numLBullets += value;
     }
 
     public int ReturnLaserBullet()
     {
-        return bullets;
+        return numLBullets;
     }
 }
