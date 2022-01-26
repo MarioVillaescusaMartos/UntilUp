@@ -9,6 +9,8 @@ public class EarthquakeManager : MonoBehaviour
     private float waitTimeStart;
     [SerializeField]
     public float waitTimeEnd;
+    [SerializeField]
+    public float intensity;
 
     public static float numWaitTimeEnd;
     public bool waitingToStart;
@@ -34,6 +36,8 @@ public class EarthquakeManager : MonoBehaviour
                 waitTimeStart = UnityEngine.Random.Range(30, 60);
 
                 OnTimerEnds(waitingToStart);
+
+                CameraShake.Instance.GenerateCameraShake(intensity, waitingToStart);
             }
             else
             {
@@ -50,6 +54,8 @@ public class EarthquakeManager : MonoBehaviour
                 numWaitTimeEnd = waitTimeEnd;
 
                 OnTimerEnds(waitingToStart);
+
+                CameraShake.Instance.GenerateCameraShake(intensity, waitingToStart);
             }
             else
             {

@@ -1,55 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     private Transform gameCamera;
     [SerializeField]
     private float amplitude;
 
     private Vector3 originalPos;
-    private bool shaking;
+    private bool shaking;*/
 
-    private EarthquakeManager _em;
+    public static CameraShake Instance { get; private set; }
+
+    private CinemachineVirtualCamera _cvc;
+    private CinemachineBasicMultiChannelPerlin _cbmcp;
 
     private void Awake()
     {
-        _em = GetComponent<EarthquakeManager>();
-    }
+        Instance = this;
 
-    private void OnEnable()
-    {
-        _em.OnTimerEnds += CallGenerateCameraShake;
-    }
-
-    private void OnDisable()
-    {
-        _em.OnTimerEnds -= CallGenerateCameraShake;
-
+        _cvc = GetComponent<CinemachineVirtualCamera>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        originalPos = gameCamera.localPosition;
     }
 
     // Update is called once per frame
-    void CallGenerateCameraShake(bool activeShake)
+    public void GenerateCameraShake(float intensity, bool activeShake)
     {
+        _cbmcp = _cvc.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
         if (!activeShake)
         {
-            StartCoroutine(GenerateCameraShake());
+            //StartCoroutine(GenerateCameraShake());
+
+            _cbmcp.m_AmplitudeGain = intensity;
         }
         else
         {
-            gameCamera.position = originalPos;
+            //gameCamera.position = originalPos;
+
+            _cbmcp.m_AmplitudeGain = 0f;
         }
 
-        shaking = activeShake;
+        //shaking = activeShake;
     }
-    IEnumerator GenerateCameraShake()
+    /*IEnumerator GenerateCameraShake()
     {
         float x = UnityEngine.Random.Range(-amplitude / 2, amplitude / 2);
         float y = UnityEngine.Random.Range(-amplitude / 2, amplitude / 2);
@@ -64,5 +64,5 @@ public class CameraShake : MonoBehaviour
             StartCoroutine(GenerateCameraShake());
         }
         
-    }
+    }*/
 }
