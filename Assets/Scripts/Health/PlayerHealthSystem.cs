@@ -7,9 +7,15 @@ public class PlayerHealthSystem : HealthSystem
 {
     public event Action OnHealthZero = delegate { };
 
+
+    public bool INVENCIBLE;
+
     public override void RestHealth(int restHealthValue)
     {
-        health -= restHealthValue;
+        if (!INVENCIBLE)
+        {
+            health -= restHealthValue;
+        }
 
         if (health <= 0)
         {
