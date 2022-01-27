@@ -49,8 +49,7 @@ public class LaserSystem : ShootingSystem
                 shot.transform.rotation = shotPoint[0].rotation;
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
-
-            Debug.Log(numLBullets);
+            SendNumBullets();
 
             OnShot();
         }
@@ -59,10 +58,16 @@ public class LaserSystem : ShootingSystem
     public override void IncreaseBullet(int value)
     {
         numLBullets += value;
+        SendNumBullets();
     }
 
     public int ReturnLaserBullet()
     {
         return numLBullets;
+    }
+
+    private void SendNumBullets()
+    {
+        ShotManager.laserBullets = numLBullets;
     }
 }

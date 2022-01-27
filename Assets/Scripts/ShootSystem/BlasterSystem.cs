@@ -49,7 +49,8 @@ public class BlasterSystem : ShootingSystem
                 shot.transform.rotation = shotPoint[0].rotation;
                 shot.GetComponent<Rigidbody2D>().AddForce(transform.right * shootingdata.fireForce);
             }
-            Debug.Log(numBBullets);
+
+            SendNumBullets();
 
             OnShot();
         }
@@ -58,10 +59,16 @@ public class BlasterSystem : ShootingSystem
     public override void IncreaseBullet(int value)
     {
         numBBullets += value;
+        SendNumBullets();
     }
 
     public int ReturnBlasterBullet()
     {
         return numBBullets;
+    }
+
+    private void SendNumBullets()
+    {
+        ShotManager.blasterBullets = numBBullets;
     }
 }
