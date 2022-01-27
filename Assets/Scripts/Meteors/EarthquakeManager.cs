@@ -20,6 +20,8 @@ public class EarthquakeManager : MonoBehaviour
     {
         waitingToStart = true;
         waitingToEnd = false;
+
+        SendCameraShake();
     }
 
     public event Action<bool> OnTimerEnds = delegate { };
@@ -37,7 +39,7 @@ public class EarthquakeManager : MonoBehaviour
 
                 OnTimerEnds(waitingToStart);
 
-                CameraShake.Instance.GenerateCameraShake(intensity, waitingToStart);
+                SendCameraShake();
             }
             else
             {
@@ -55,12 +57,18 @@ public class EarthquakeManager : MonoBehaviour
 
                 OnTimerEnds(waitingToStart);
 
-                CameraShake.Instance.GenerateCameraShake(intensity, waitingToStart);
+                SendCameraShake();
             }
             else
             {
                 waitTimeEnd -= Time.deltaTime;
             }
         }
+    }
+
+    private void SendCameraShake()
+    {
+        CameraShake.Instance.GenerateCameraShake(intensity, waitingToStart);
+
     }
 }

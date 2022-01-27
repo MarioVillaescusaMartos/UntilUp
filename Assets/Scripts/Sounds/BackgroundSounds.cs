@@ -40,7 +40,7 @@ public class BackgroundSounds : MonoBehaviour
     {
         if (!play)
         {
-            SoundEmition(earthquaketSound, transform.position, 30f);
+            SoundEmition(earthquaketSound, transform.position, EarthquakeManager.numWaitTimeEnd);
         }
     }
 

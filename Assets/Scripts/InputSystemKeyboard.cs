@@ -27,7 +27,6 @@ public class InputSystemKeyboard : MonoBehaviour
 
         if (!pause)
         {
-            Debug.Log(pause);
             hor = Input.GetAxis("Horizontal");
             ver = Input.GetAxis("Vertical");
 
