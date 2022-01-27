@@ -36,33 +36,11 @@ public class CameraShake : MonoBehaviour
 
         if (!activeShake)
         {
-            //StartCoroutine(GenerateCameraShake());
-
             _cbmcp.m_AmplitudeGain = intensity;
         }
         else
         {
-            //gameCamera.position = originalPos;
-
             _cbmcp.m_AmplitudeGain = 0f;
         }
-
-        //shaking = activeShake;
     }
-    /*IEnumerator GenerateCameraShake()
-    {
-        float x = UnityEngine.Random.Range(-amplitude / 2, amplitude / 2);
-        float y = UnityEngine.Random.Range(-amplitude / 2, amplitude / 2);
-        Vector3 cameraNewPosition = new Vector3(x, y, -10);
-
-        gameCamera.position = originalPos + cameraNewPosition;
-
-        yield return new WaitForSeconds(0.1f);
-
-        if (!shaking)
-        {
-            StartCoroutine(GenerateCameraShake());
-        }
-        
-    }*/
 }

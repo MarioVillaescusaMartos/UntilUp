@@ -11,16 +11,20 @@ public class PlayerSounds : MonoBehaviour
     private GameObject laserShotSound;
     [SerializeField]
     private GameObject jumpSound;
+    [SerializeField]
+    private GameObject tpSound;
 
     private BlasterSystem _bs;
     private LaserSystem _ls;
     private Engine _engine;
+    private TpSystem _tp;
 
     void Awake()
     {
         _bs = GetComponent<BlasterSystem>();
         _ls = GetComponent<LaserSystem>();
         _engine = GetComponent<Engine>();
+        _tp = GetComponent<TpSystem>();
     }
 
     private void OnEnable()
@@ -28,6 +32,7 @@ public class PlayerSounds : MonoBehaviour
         _bs.OnShot += BlasterSound;
         _ls.OnShot += LaserSound;
         _engine.OnJumped += JumpSound;
+        _tp.OnTp += TpSound;
     }
 
     private void OnDisable()
@@ -35,6 +40,8 @@ public class PlayerSounds : MonoBehaviour
         _bs.OnShot -= BlasterSound;
         _ls.OnShot -= LaserSound;
         _engine.OnJumped -= JumpSound;
+        _tp.OnTp -= TpSound;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -55,6 +62,11 @@ public class PlayerSounds : MonoBehaviour
     void JumpSound()
     {
         SoundEmition(jumpSound, transform.position, 2f);
+    }
+
+    void TpSound()
+    {
+        SoundEmition(tpSound, transform.position, 2f);
     }
 
 

@@ -13,6 +13,8 @@ public class TpSystem : MonoBehaviour
 
     private Vector3 tpPosition;
 
+    public event Action OnTp = delegate { };
+
     private void OnEnable()
     {
         GetComponent<InputSystemKeyboard>().OnTp += Tp;
@@ -52,6 +54,8 @@ public class TpSystem : MonoBehaviour
         {
             transform.position = tpPosition;
             tpEnter = false;
+
+            OnTp();
         }
     }
 
