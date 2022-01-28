@@ -8,6 +8,7 @@ public class BlasterSystem : ShootingSystem
     private SpriteRenderer _sp;
 
     public event Action OnShot = delegate { };
+    public event Action OnBulletIncrease = delegate { };
 
     private int numBBullets;
 
@@ -59,6 +60,9 @@ public class BlasterSystem : ShootingSystem
     public override void IncreaseBullet(int value)
     {
         numBBullets += value;
+
+        OnBulletIncrease();
+
         SendNumBullets();
     }
 

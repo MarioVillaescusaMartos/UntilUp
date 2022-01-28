@@ -6,6 +6,7 @@ using System;
 public class PlayerHealthSystem : HealthSystem
 {
     public event Action OnHealthZero = delegate { };
+    public event Action OnHealthIncrease = delegate { };
 
     public bool INVENCIBLE;
 
@@ -28,6 +29,8 @@ public class PlayerHealthSystem : HealthSystem
     public void IncreaseHealth(int value)
     {
         health += value;
+
+        OnHealthIncrease();
 
         SendHealth();
     }

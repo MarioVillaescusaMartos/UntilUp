@@ -13,11 +13,18 @@ public class PlayerSounds : MonoBehaviour
     private GameObject jumpSound;
     [SerializeField]
     private GameObject tpSound;
+    [SerializeField]
+    private GameObject blasterRechargeSound;
+    [SerializeField]
+    private GameObject laserrRechargeSound;
+    [SerializeField]
+    private GameObject heartRechargeSound;
 
     private BlasterSystem _bs;
     private LaserSystem _ls;
     private Engine _engine;
     private TpSystem _tp;
+    private PlayerHealthSystem _phs;
 
     void Awake()
     {
@@ -25,6 +32,7 @@ public class PlayerSounds : MonoBehaviour
         _ls = GetComponent<LaserSystem>();
         _engine = GetComponent<Engine>();
         _tp = GetComponent<TpSystem>();
+        _phs = GetComponent<PlayerHealthSystem>();
     }
 
     private void OnEnable()
@@ -33,6 +41,9 @@ public class PlayerSounds : MonoBehaviour
         _ls.OnShot += LaserSound;
         _engine.OnJumped += JumpSound;
         _tp.OnTp += TpSound;
+        _bs.OnBulletIncrease += BlasterRechargeSound;
+        _ls.OnBulletIncrease += LaserRechargeSound;
+        _phs.OnHealthIncrease += HealthRechargeSound;
     }
 
     private void OnDisable()
@@ -49,24 +60,42 @@ public class PlayerSounds : MonoBehaviour
 
     }
 
-    void BlasterSound()
+    private void BlasterSound()
     {
         SoundEmition(blasterShotSound, transform.position, 2f);
     }
 
-    void LaserSound()
+    private void LaserSound()
     {
         SoundEmition(laserShotSound, transform.position, 2f);
     }
 
-    void JumpSound()
+    private void JumpSound()
     {
         SoundEmition(jumpSound, transform.position, 2f);
     }
 
-    void TpSound()
+    private void TpSound()
     {
         SoundEmition(tpSound, transform.position, 2f);
+    }
+
+    private void BlasterRechargeSound()
+    {
+        SoundEmition(blasterRechargeSound, transform.position, 2f);
+
+    }
+
+    private void LaserRechargeSound()
+    {
+        SoundEmition(laserrRechargeSound, transform.position, 2f);
+
+    }
+
+    private void HealthRechargeSound()
+    {
+        SoundEmition(heartRechargeSound, transform.position, 2f);
+
     }
 
 
