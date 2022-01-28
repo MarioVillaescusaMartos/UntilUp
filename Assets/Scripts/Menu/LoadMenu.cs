@@ -13,6 +13,8 @@ public class LoadMenu : MonoBehaviour
 
     public void LoadsMenu()
     {
+        System.GC.Collect();
+
         SceneManager.LoadScene("MainMenuScene");
     }
 }

@@ -13,6 +13,8 @@ public class QuitGame : MonoBehaviour
 
     public void QuitsGame()
     {
+        System.GC.Collect();
+
         Application.Quit();
     }
 }

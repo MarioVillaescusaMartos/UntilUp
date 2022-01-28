@@ -13,11 +13,15 @@ public class SignOnSignInOptions : MonoBehaviour
 
     public void GoToSignUp()
     {
+        System.GC.Collect();
+
         SceneManager.LoadScene("SignUpScene");
     }
 
     public void GoToSignIn() 
     {
+        System.GC.Collect();
+
         SceneManager.LoadScene("SignInScene");
     }
 }

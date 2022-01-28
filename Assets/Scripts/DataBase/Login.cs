@@ -35,6 +35,8 @@ public class Login : MonoBehaviour
             DBManager.username = usernameField.text;
             DBManager.id = int.Parse(www.text.Split('\t')[1]);
 
+            System.GC.Collect();
+
             SceneManager.LoadScene("MainMenuScene");
         }
         else

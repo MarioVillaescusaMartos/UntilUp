@@ -13,6 +13,8 @@ public class DoorController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        System.GC.Collect();
+
         SceneManager.LoadScene("CreditsScene");
     }
 }

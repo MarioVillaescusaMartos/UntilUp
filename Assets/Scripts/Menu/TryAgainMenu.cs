@@ -25,6 +25,8 @@ public class TryAgainMenu : MonoBehaviour
 
     public void TryAgain()
     {
+        System.GC.Collect();
+
         gameOversUI.SetActive(false);
 
         Time.timeScale = 1f;

@@ -39,6 +39,9 @@ public class Register : MonoBehaviour
         if (www.text == "0")
         {
             Debug.Log("User created successfully.");
+
+            System.GC.Collect();
+
             SceneManager.LoadScene("SignInScene");
         }
         else
