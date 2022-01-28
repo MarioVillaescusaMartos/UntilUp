@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeartCollectableSystem : CollectableSystem
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class HeartCollectableSystem : CollectableSystem
         if (collision.TryGetComponent(out PlayerHealthSystem healthHeart))
         {
             healthHeart.IncreaseHealth(increaseValue);
+
         }
         gameObject.SetActive(false);
     }
