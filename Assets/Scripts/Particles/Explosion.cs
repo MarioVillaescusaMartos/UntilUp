@@ -14,6 +14,8 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     private float stopTime;
 
+    public static bool waitingToStart;
+
     private void OnEnable()
     {
         GetComponent<EnemyHealthSystem>().OnHealthZero += Explode;
@@ -32,19 +34,32 @@ public class Explosion : MonoBehaviour
 
     void Update()
     {
-        if (stopTime <= 0)
+        /*if (waitingToStart)
         {
-            stopTime -= Time.deltaTime;
+            if (stopTime <= 0)
+            {
+                waitingToEnd = true;
+            }
+            else
+            {
+                stopTime -= Time.deltaTime;
+                Debug.Log("EXPLODE");
 
-            explosion.Stop();
+            }
         }
+
+        if (waitingToEnd)
+        {
+            explosion.Stop();
+
+            waitingToStart = false;
+        }*/
     }
 
     private void Explode()
     {
         explosion.transform.position = explosionPoint.transform.position;
+        waitingToStart = true;
         explosion.Play();
-        Debug.Log("EXPLODE");
-        stopTime = 1f;
     }
 }
