@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     public Transform[] cameraPositions;
 
+    public Transform lightPoint;
+
+    public Transform[] lightPositions;
+
     public enum CinematicCommandId
     {
         enterCinematicMode,
@@ -20,6 +24,7 @@ public class GameManager : MonoBehaviour
         log,
         setCameraPosition,
         setCameraSize,
+        setLightPosition,
         showDialog,
         setObjectActive,
         setObjectPosition
@@ -195,6 +200,12 @@ public class GameManager : MonoBehaviour
                     float size = Single.Parse(command.param1);
 
                     gameCameraC.SetSize(size);
+                }
+                else if (command.id == CinematicCommandId.setLightPosition)
+                {
+                    int index = Int32.Parse(command.param1);
+
+                    lightPoint.position = lightPositions[index].position;
                 }
                 else if (command.id == CinematicCommandId.setObjectActive)
                 {
