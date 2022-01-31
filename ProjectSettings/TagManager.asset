@@ -20,7 +20,7 @@ TagManager:
   - Pickables
   - Background
   - DownKill
-  - 
+  - TriggerCinematic
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Meteor
     uniqueID: 1756299179
+    locked: 0
+  - name: UI
+    uniqueID: 1165811989
     locked: 0
