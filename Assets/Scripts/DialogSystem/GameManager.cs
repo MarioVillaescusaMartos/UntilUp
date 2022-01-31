@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour
         setCameraSize,
         showDialog,
         setObjectActive,
-        setObjectPosition,
-        setLightning
+        setObjectPosition
     };
 
     [System.Serializable]
@@ -39,11 +38,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Cinematic system")]
     public CinematicCommand[] commands;
-
-    [Header("Light System")]
-    public Transform lightPoint;
-    public Color lightColor;
-
 
     [Header("Dialog system")]
     public Transform[] dialogCommon;
@@ -87,9 +81,6 @@ public class GameManager : MonoBehaviour
 
     GameCamera gameCameraC;
 
-    //Lightning System
-    Light lt;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -107,8 +98,6 @@ public class GameManager : MonoBehaviour
         dialogTextC = dialogText.GetComponent<Text>();
 
         gameCameraC = gameCamera.GetComponent<GameCamera>();
-
-        lt = lightPoint.GetComponent<Light>();
     }
 
 
@@ -236,22 +225,6 @@ public class GameManager : MonoBehaviour
                     {
                         Debug.Log("No Active");
                     }
-                }
-                else if (command.id == CinematicCommandId.setLightning)
-                {
-                    float timeFade = Single.Parse(command.param1);
-                    float maxIntesity = Single.Parse(command.param2);
-
-                    lt.color = lightColor;
-
-                    if (lt.intensity >= maxIntesity)
-                    {
-                        lt.intensity -= timeFade;
-                    }
-                    else if (lt.intensity <= 0)
-                    {
-                        lt.intensity += timeFade;
-                    } 
                 }
                 else
                 {
