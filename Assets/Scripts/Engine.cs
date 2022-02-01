@@ -44,9 +44,6 @@ public class Engine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*transform.position += _inputSystem.ver * transform.up * jumpSpeed * Time.deltaTime;
-        transform.position += _inputSystem.hor * transform.right * speed * Time.deltaTime;*/
-
         _rb.velocity = new Vector2(_inputSystem.hor * speed, _rb.velocity.y);
 
 

@@ -57,7 +57,7 @@ namespace FSM
             return _ev.ReturnHit();
         }
 
-        public string GetCurrentKey()
+        public bool GetCurrentKey()
         {
             return _inputSystem.ReturnKey();
         }
