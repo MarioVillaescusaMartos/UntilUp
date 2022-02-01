@@ -5,6 +5,7 @@ using TMPro;
 using UnityEditor;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public Transform[] lightPositions;
 
+    public GameObject[] sounds;
+
     public enum CinematicCommandId
     {
         enterCinematicMode,
@@ -24,10 +27,13 @@ public class GameManager : MonoBehaviour
         log,
         setCameraPosition,
         setCameraSize,
+        cameraZoom,
         setLightPosition,
         showDialog,
         setObjectActive,
-        setObjectPosition
+        setObjectPosition,
+        loadNextScene,
+        loadSound
     };
 
     [System.Serializable]
@@ -73,8 +79,15 @@ public class GameManager : MonoBehaviour
     Vector3 originalPos;
     GameCamera originalSize;
 
-    // Dialogs system
+    //Camera zoom
+    bool zoom;
+    float zoomSpeed;
+    float cameraSize;
 
+    //Sounds System
+    float time;
+
+    // Dialogs system
     bool isCinematicMode;
 
     bool showingDialog;
@@ -86,6 +99,8 @@ public class GameManager : MonoBehaviour
 
     GameCamera gameCameraC;
 
+    CinematicSounds cinSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +108,7 @@ public class GameManager : MonoBehaviour
 
         isCinematicMode = false;
         waiting = false;
+        zoom = false;
 
         // Init dialog system
 
@@ -103,6 +119,8 @@ public class GameManager : MonoBehaviour
         dialogTextC = dialogText.GetComponent<Text>();
 
         gameCameraC = gameCamera.GetComponent<GameCamera>();
+
+        cinSound = gameCamera.GetComponent<CinematicSounds>();
     }
 
 
@@ -142,7 +160,8 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    waitTimer -= Time.deltaTime;
+                    waitTimer -= 0.01f;//Time.deltaTime;
+                    Debug.Log(waitTimer);
                 }
             }
             else if (commandIndex < commands.Length)
@@ -174,6 +193,7 @@ public class GameManager : MonoBehaviour
                     float time = Single.Parse(command.param1);
 
                     waiting = true;
+
                     waitTimer = time;
                 }
                 else if (command.id == CinematicCommandId.log)
@@ -185,6 +205,8 @@ public class GameManager : MonoBehaviour
                 else if (command.id == CinematicCommandId.showDialog)
                 {
                     int index = Int32.Parse(command.param1);
+
+                    Debug.Log("Show Dielog: " + index);
 
                     showingDialog = true;
                     dialogIndex = index;
@@ -200,6 +222,33 @@ public class GameManager : MonoBehaviour
                     float size = Single.Parse(command.param1);
 
                     gameCameraC.SetSize(size);
+                }
+                else if (command.id == CinematicCommandId.cameraZoom)
+                {
+                    float minSize = Single.Parse(command.param1);
+                    float speed = Single.Parse(command.param2);
+                    float camSize = Single.Parse(command.param3);
+
+                    if (!zoom)
+                    {
+                        zoom = true;
+                        cameraSize = camSize;
+                        originalPos = gameCamera.localPosition;
+                    }
+
+                    if (zoom)
+                    {
+                        if (cameraSize <= minSize)
+                        {
+                            zoom = false;
+                        }
+                        else
+                        {
+                            cameraSize -= speed;
+                            gameCameraC.SetSize(cameraSize);
+                            Debug.Log(cameraSize);
+                        }
+                    }
                 }
                 else if (command.id == CinematicCommandId.setLightPosition)
                 {
@@ -237,6 +286,19 @@ public class GameManager : MonoBehaviour
                         Debug.Log("No Active");
                     }
                 }
+                else if (command.id == CinematicCommandId.loadNextScene)
+                {
+                    string sceneName = command.param1;
+
+                    SceneManager.LoadScene(sceneName);
+                }
+                else if (command.id == CinematicCommandId.loadSound)
+                {
+                    int index = Int32.Parse(command.param1);
+                    int time = Int32.Parse(command.param2);
+
+                    cinSound.SoundEmition(sounds[index], transform.position, time);
+                }
                 else
                 {
                     Debug.Log("Comando de cinematica no implementado");
@@ -244,7 +306,7 @@ public class GameManager : MonoBehaviour
 
 
 
-                if (!waiting && !showingDialog)
+                if (!waiting && !showingDialog && !zoom)
                 {
                     commandIndex++;
                 }
