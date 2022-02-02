@@ -4,6 +4,8 @@ include("connection.php");
 
 $username = $_POST["name"];
 $password = $_POST["password"];
+$newposX = $_POST["posX"];
+$newposY = $_POST["posY"];
 $newscore = $_POST["score"];
 $newattempt = $_POST['attempt'];
 $newhealth = $_POST['health'];
@@ -27,12 +29,12 @@ $salt = "\$5\$rounds=5000\$" ."steamedhams".$username."\$";
 $hash = crypt($password, $salt);
 
 $sqlInsertPlayers = "INSERT INTO players(username,hash,salt) VALUES ('$username','$hash','$salt')";
-$sqlInsertGameStats = "INSERT INTO gamestats(score,attempt,health,blasterbullet,laserbullet) VALUES ('$newscore','$newattempt','$newhealth','$newblasterbullet','$newlaserbullet')";
+$sqlInsertGameStats = "INSERT INTO gamestats(posx,posy,score,attempt,health,blasterbullet,laserbullet) VALUES ('$newposX','$newposY','$newscore','$newattempt','$newhealth','$newblasterbullet','$newlaserbullet')";
 
 
 mysqli_query($conn, $sqlInsertPlayers);
 mysqli_query($conn, $sqlInsertGameStats);
 
-echo "0\t";//0 = No errors
+echo "0";
 
 ?>

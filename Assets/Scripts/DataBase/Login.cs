@@ -17,6 +17,8 @@ public class Login : MonoBehaviour
 
     public Button submitLogin;
 
+    private string[] data;
+
     public void CallLogin()
     {
         StartCoroutine(Loging());
@@ -33,7 +35,9 @@ public class Login : MonoBehaviour
         if (www.text[0] == '0')
         {
             DBManager.username = usernameField.text;
-            DBManager.id = int.Parse(www.text.Split('\t')[1]);
+            data = www.text.Split("\t"[0]);
+
+            SetDBManager();
 
             System.GC.Collect();
 
@@ -44,14 +48,24 @@ public class Login : MonoBehaviour
             infoDisplay.text = "User identification failed. Error #" + www.text;
 
             HideLoad();
-
-            //Debug.Log("User identification failed. Error #" + www.text);
         }
     }
 
     public void VerifyInputs()
     {
         submitLogin.interactable = (usernameField.text.Length >= 1 && passwordField.text.Length >= 1);
+    }
+
+    public void SetDBManager()
+    {
+        DBManager.id = int.Parse(data[1]);
+        DBManager.posX = float.Parse(data[2]);
+        DBManager.posY = float.Parse(data[3]);
+        DBManager.score = int.Parse(data[4]);
+        DBManager.attempt = int.Parse(data[5]);
+        DBManager.health = int.Parse(data[6]);
+        DBManager.blasterbullet = int.Parse(data[7]);
+        DBManager.laserbullet = int.Parse(data[8]);
     }
 
     public void ShowLoad()

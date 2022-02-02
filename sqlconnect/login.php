@@ -27,7 +27,7 @@ if ($hash != $loginHash)
 	exit();
 }
 
-echo "0\t" .$existsLoginInfo["id"];
+echo "0\t" .$existsLoginInfo["id"] . "\t" . $existsLoginInfo["posx"] . "\t" . $existsLoginInfo["posy"] . "\t" . $existsLoginInfo["score"] . "\t" . $existsLoginInfo["attempt"] . "\t" . $existsLoginInfo["health"] . "\t" . $existsLoginInfo["blasterbullet"] . "\t" . $existsLoginInfo["laserbullet"];
 
 
 ?>

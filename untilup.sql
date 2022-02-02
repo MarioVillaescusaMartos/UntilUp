@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-02-2022 a las 12:35:12
+-- Tiempo de generación: 02-02-2022 a las 13:29:02
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -32,8 +32,8 @@ USE `untilup`;
 DROP TABLE IF EXISTS `gamestats`;
 CREATE TABLE `gamestats` (
   `id` int(10) NOT NULL,
-  `posX` float NOT NULL,
-  `posY` float NOT NULL,
+  `posx` float NOT NULL,
+  `posy` float NOT NULL,
   `score` int(100) NOT NULL,
   `attempt` int(100) NOT NULL,
   `health` int(1) NOT NULL,

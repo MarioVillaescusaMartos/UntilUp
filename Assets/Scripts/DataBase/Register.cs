@@ -15,6 +15,8 @@ public class Register : MonoBehaviour
     [SerializeField]
     private GameObject loadCercleUI;
 
+    private float positions;
+
     public Button submitRegister;
 
     public void CallRegistration()
@@ -24,10 +26,12 @@ public class Register : MonoBehaviour
 
     IEnumerator Registration()
     {
-        string sqcon = "URI = file:" + Application.dataPath + "/sqlconnect/register.db";
+        //string sqcon = "URI = file:" + Application.dataPath + "/sqlconnect/register.db";
         WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
+        form.AddField("posX", positions.ToString());
+        form.AddField("posY", positions.ToString());
         form.AddField("score", 0);
         form.AddField("attempt", 0);
         form.AddField("health", 1);

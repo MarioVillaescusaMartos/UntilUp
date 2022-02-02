@@ -1913,6 +1913,7 @@ GameObject:
   - component: {fileID: 791743615}
   - component: {fileID: 791743614}
   - component: {fileID: 791743616}
+  - component: {fileID: 791743617}
   m_Layer: 5
   m_Name: CanvasMenus
   m_TagString: Untagged
@@ -2016,7 +2017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc0eca82b32f52448b2d54df28c284f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyPressed: 
 --- !u!114 &791743611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,6 +2092,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46db370eef9b21642b5f5b4e62901ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &791743617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791743605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503bf84985318fc44a69cc1707d6312d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &799846338
@@ -2820,7 +2832,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047242223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 791743617}
+        m_TargetAssemblyTypeName: LoadGame, Assembly-CSharp
+        m_MethodName: LoadGames
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1047242223
 MonoBehaviour:
   m_ObjectHideFlags: 0

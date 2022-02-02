@@ -8,19 +8,12 @@ public class Game : MonoBehaviour
 {
     public Text playerDisplay;
     public Text idDisplay;
-    public Text scoreDisplay;
-    public Text healthDisplay;
 
     [SerializeField]
     private Text infoDisplay;
 
-    public int score = 3;
-
     private void Awake()
     {
-        playerDisplay.text = "Player: " + DBManager.username;
-        idDisplay.text = "ID: " + DBManager.id;
-        scoreDisplay.text = "Score: " + score;
     }
 
     public void CallSaveData()
@@ -33,6 +26,8 @@ public class Game : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", DBManager.username);
         form.AddField("id", DBManager.id);
+        form.AddField("posX", DBManager.posX.ToString());
+        form.AddField("posY", DBManager.posY.ToString());
         form.AddField("score", ScoreSystem.score);
         form.AddField("attempt", AttemptSystem.attempt);
         form.AddField("health", HealthSystem.health);
