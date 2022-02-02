@@ -39,6 +39,8 @@ public class Login : MonoBehaviour
 
             SetDBManager();
 
+            Debug.Log(DBManager.posX);
+
             System.GC.Collect();
 
             SceneManager.LoadScene("MainMenuScene");

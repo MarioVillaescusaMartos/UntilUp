@@ -15,7 +15,8 @@ public class Register : MonoBehaviour
     [SerializeField]
     private GameObject loadCercleUI;
 
-    private float positions;
+    private float positionX = -7.64f;
+    private float positionY = -2.667f;
 
     public Button submitRegister;
 
@@ -30,8 +31,8 @@ public class Register : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
-        form.AddField("posX", positions.ToString());
-        form.AddField("posY", positions.ToString());
+        form.AddField("posX", 7460);
+        form.AddField("posY", positionY.ToString());
         form.AddField("score", 0);
         form.AddField("attempt", 0);
         form.AddField("health", 1);
@@ -46,6 +47,8 @@ public class Register : MonoBehaviour
 
             System.GC.Collect();
 
+            Debug.Log(positionX.ToString());
+
             SceneManager.LoadScene("SignInScene");
         }
         else
@@ -55,7 +58,7 @@ public class Register : MonoBehaviour
             HideLoad();
 
             //Debug.Log("User creation field. Error #" + www.text);
-        }
+        } 
     }
 
     public void VerifyInputs()

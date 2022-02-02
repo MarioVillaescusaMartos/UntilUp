@@ -15,6 +15,9 @@ public class AttemptSystem : MonoBehaviour
     private void Awake()
     {
         _healthSystem = GetComponent<PlayerHealthSystem>();
+
+        attempt = DBManager.attempt;
+        IncrementAttempt();
     }
 
     private void OnEnable()
@@ -38,6 +41,7 @@ public class AttemptSystem : MonoBehaviour
         attempt += increment;
 
         AttemptManager.attempts = attempt;
+        attempt = DBManager.attempt;
     }
 
     public int ReturnAttempt()

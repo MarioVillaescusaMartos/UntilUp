@@ -27,6 +27,7 @@ public class LaserSystem : ShootingSystem
     void Start()
     {
         numLBullets = DBManager.blasterbullet;
+        SendNumBullets();
     }
     public override void Shoot()
     {
@@ -73,5 +74,6 @@ public class LaserSystem : ShootingSystem
     private void SendNumBullets()
     {
         ShotManager.laserBullets = numLBullets;
+        DBManager.laserbullet = numLBullets;
     }
 }

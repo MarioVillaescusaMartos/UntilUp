@@ -17,6 +17,9 @@ public class ScoreSystem : MonoBehaviour
     private void Awake()
     {
         _healthSystem = GetComponent<EnemyHealthSystem>();
+
+        score = DBManager.score;
+        PassValue();
     }
 
     private void OnEnable()
@@ -33,9 +36,14 @@ public class ScoreSystem : MonoBehaviour
     public void PassIncrementValue()
     {
         score = ScoreManager.score +  incrementValue;
-
-        ScoreManager.score = score;
+        
+        DBManager.score = score;
 
         Debug.Log("Score: " + score);
+    }
+
+    public void PassValue()
+    {
+        ScoreManager.score = score;
     }
 }

@@ -5,20 +5,50 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour
 {
+    private float positionX = -7.640f;
+    private float positionY = -2.667f;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewGames()
     {
+        StartCoroutine(NewGameEntry());
+
         
     }
 
-    public void NewGames()
+    IEnumerator NewGameEntry()
     {
-        SceneManager.LoadScene("IntroduceStoryScene");
+        WWWForm form = new WWWForm();
+        form.AddField("name", DBManager.username);
+        form.AddField("id", DBManager.id);
+        form.AddField("posX", positionX.ToString());
+        form.AddField("posY", positionY.ToString());
+        form.AddField("score", 0);
+        form.AddField("attempt", 0);
+        form.AddField("health", 1);
+        form.AddField("blasterbullet", 5);
+        form.AddField("laserbullet", 5);
+        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
+        yield return www;
+
+        if (www.text == "0")
+        {
+            Debug.Log("New Game Created");
+
+            System.GC.Collect();
+
+            Debug.Log(positionX.ToString());
+
+            SceneManager.LoadScene("IntroduceStoryScene");
+        }
+        else
+        {
+            Debug.Log("User creation field. Error #" + www.text);
+        }
     }
 }

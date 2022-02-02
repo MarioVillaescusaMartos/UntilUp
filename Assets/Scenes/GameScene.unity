@@ -77996,12 +77996,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b49b187d9a776140a402f049b0f7a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDisplay: {fileID: 0}
-  idDisplay: {fileID: 0}
-  scoreDisplay: {fileID: 0}
-  healthDisplay: {fileID: 0}
+  playerDisplay: {fileID: 949218949}
+  idDisplay: {fileID: 970267117}
+  characterPosition: {fileID: 1053561231}
   infoDisplay: {fileID: 1127640723}
-  score: 3
 --- !u!114 &791743620
 MonoBehaviour:
   m_ObjectHideFlags: 0

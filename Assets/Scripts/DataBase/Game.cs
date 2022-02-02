@@ -9,6 +9,8 @@ public class Game : MonoBehaviour
     public Text playerDisplay;
     public Text idDisplay;
 
+    public GameObject characterPosition;
+
     [SerializeField]
     private Text infoDisplay;
 
@@ -28,11 +30,11 @@ public class Game : MonoBehaviour
         form.AddField("id", DBManager.id);
         form.AddField("posX", DBManager.posX.ToString());
         form.AddField("posY", DBManager.posY.ToString());
-        form.AddField("score", ScoreSystem.score);
-        form.AddField("attempt", AttemptSystem.attempt);
-        form.AddField("health", HealthSystem.health);
-        form.AddField("blasterbullet", BlasterSystem.bullets);
-        form.AddField("laserbullet", LaserSystem.bullets);
+        form.AddField("score", DBManager.score);
+        form.AddField("attempt", DBManager.attempt);
+        form.AddField("health", DBManager.health);
+        form.AddField("blasterbullet", DBManager.blasterbullet);
+        form.AddField("laserbullet", DBManager.laserbullet);
 
         WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
         yield return www;

@@ -10,6 +10,12 @@ public class PlayerHealthSystem : HealthSystem
 
     public bool INVENCIBLE;
 
+    void Start()
+    {
+        health = DBManager.health;
+        SendHealth();
+    }
+
     public override void RestHealth(int restHealthValue)
     {
         if (!INVENCIBLE)
@@ -43,5 +49,6 @@ public class PlayerHealthSystem : HealthSystem
     public void SendHealth()
     {
         HeartManager.heart = health;
+        DBManager.health = health;
     }
 }
