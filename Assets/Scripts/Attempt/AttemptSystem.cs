@@ -41,7 +41,9 @@ public class AttemptSystem : MonoBehaviour
         attempt += increment;
 
         AttemptManager.attempts = attempt;
-        attempt = DBManager.attempt;
+        DBManager.attempt = attempt;
+
+        Debug.Log(attempt);
     }
 
     public int ReturnAttempt()

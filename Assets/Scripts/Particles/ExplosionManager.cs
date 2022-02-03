@@ -30,7 +30,6 @@ public class ExplosionManager : MonoBehaviour
             else
             {
                 stopTime -= Time.deltaTime;
-                Debug.Log("EXPLODE");
             }
         }
     }
