@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool activeTimeScale;
+    public static bool activeTimeScale;
+    public bool getActiveTimeScale;
 
     public Transform gameCamera;
 
@@ -106,14 +107,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Init state
+        activeTimeScale = false;
 
+        // Init state
         isCinematicMode = false;
         waiting = false;
         zoom = false;
 
         // Init dialog system
-
         showingDialog = false;
         dialogIndex = 0;
 
@@ -130,7 +131,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeTimeScale)
+        getActiveTimeScale = activeTimeScale;
+
+        if (!getActiveTimeScale)
         {
             Time.timeScale = 1.0f;
         }
@@ -237,7 +240,6 @@ public class GameManager : MonoBehaviour
                 else if (command.id == CinematicCommandId.cameraZoom)
                 {
                     float minSize = Single.Parse(command.param1);
-                    //float speed = Single.Parse(command.param2);
                     float camSize = Single.Parse(command.param2);
 
                     if (!zoom)

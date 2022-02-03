@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b781115649aa4c8dc4b367779ba52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getActiveTimeScale: 0
   gameCamera: {fileID: 1827122415}
   cameraPositions: []
   lightPoint: {fileID: 1005325580}
@@ -427,7 +428,7 @@ MonoBehaviour:
     param3: 
     param4: 
   - id: 2
-    param1: 7
+    param1: 3,5
     param2: 
     param3: 
     param4: 
