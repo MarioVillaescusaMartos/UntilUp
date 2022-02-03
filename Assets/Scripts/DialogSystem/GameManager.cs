@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool activeTimeScale;
+
     public Transform gameCamera;
 
     public Transform[] cameraPositions;
@@ -128,7 +130,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = 1.0f;
+        if (activeTimeScale)
+        {
+            Time.timeScale = 1.0f;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
 
         if(isCinematicMode)
         {

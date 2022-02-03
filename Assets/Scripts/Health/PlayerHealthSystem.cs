@@ -7,6 +7,7 @@ public class PlayerHealthSystem : HealthSystem
 {
     public event Action OnHealthZero = delegate { };
     public event Action OnHealthIncrease = delegate { };
+    public event Action OnHealthDecrease = delegate { };
 
     public bool INVENCIBLE;
 
@@ -21,6 +22,7 @@ public class PlayerHealthSystem : HealthSystem
         if (!INVENCIBLE)
         {
             health -= restHealthValue;
+            OnHealthDecrease();
         }
 
         if (health <= 0)

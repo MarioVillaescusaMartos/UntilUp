@@ -19,6 +19,8 @@ public class PlayerSounds : MonoBehaviour
     private GameObject laserrRechargeSound;
     [SerializeField]
     private GameObject heartRechargeSound;
+    [SerializeField]
+    private GameObject hurtSound;
 
     private BlasterSystem _bs;
     private LaserSystem _ls;
@@ -44,6 +46,7 @@ public class PlayerSounds : MonoBehaviour
         _bs.OnBulletIncrease += BlasterRechargeSound;
         _ls.OnBulletIncrease += LaserRechargeSound;
         _phs.OnHealthIncrease += HealthRechargeSound;
+        _phs.OnHealthDecrease += HealthDecreaseSound;
     }
 
     private void OnDisable()
@@ -52,8 +55,12 @@ public class PlayerSounds : MonoBehaviour
         _ls.OnShot -= LaserSound;
         _engine.OnJumped -= JumpSound;
         _tp.OnTp -= TpSound;
-
+        _bs.OnBulletIncrease -= BlasterRechargeSound;
+        _ls.OnBulletIncrease -= LaserRechargeSound;
+        _phs.OnHealthIncrease -= HealthRechargeSound;
+        _phs.OnHealthDecrease -= HealthDecreaseSound;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +103,11 @@ public class PlayerSounds : MonoBehaviour
     {
         SoundEmition(heartRechargeSound, transform.position, 2f);
 
+    }
+
+    private void HealthDecreaseSound()
+    {
+        SoundEmition(hurtSound, transform.position, 1.5f);
     }
 
 
