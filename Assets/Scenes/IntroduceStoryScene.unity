@@ -357,7 +357,7 @@ MonoBehaviour:
     param3: 
     param4: 
   - id: 2
-    param1: 3
+    param1: 2
     param2: 
     param3: 
     param4: 
@@ -372,7 +372,7 @@ MonoBehaviour:
     param3: 
     param4: 
   - id: 2
-    param1: 12
+    param1: 6
     param2: 
     param3: 
     param4: 
@@ -427,8 +427,13 @@ MonoBehaviour:
     param3: 
     param4: 
   - id: 2
-    param1: 12
+    param1: 7
     param2: 
+    param3: 
+    param4: 
+  - id: 6
+    param1: 0
+    param2: 5
     param3: 
     param4: 
   - id: 11
@@ -470,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256881200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7222328, y: 0.8432524, z: -1564.7245}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

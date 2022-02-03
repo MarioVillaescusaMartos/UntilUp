@@ -2,8 +2,8 @@
 
 include("connection.php");
 
-$username = $_POST["name"];
-$password = $_POST["password"];
+$username = $_GET["name"];
+$password = $_GET["password"];
 
 $usernameCheckQuery = "SELECT * FROM players pl, gamestats gs WHERE pl.username='".$username."' AND gs.id = pl.id;";
 

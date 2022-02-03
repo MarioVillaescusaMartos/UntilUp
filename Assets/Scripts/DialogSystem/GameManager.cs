@@ -128,6 +128,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Time.timeScale = 1.0f;
+
         if(isCinematicMode)
         {
             if (showingDialog)
@@ -160,7 +162,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    waitTimer -= 0.01f;//Time.deltaTime;
+                    waitTimer -= Time.deltaTime;
                     Debug.Log(waitTimer);
                 }
             }
@@ -226,8 +228,8 @@ public class GameManager : MonoBehaviour
                 else if (command.id == CinematicCommandId.cameraZoom)
                 {
                     float minSize = Single.Parse(command.param1);
-                    float speed = Single.Parse(command.param2);
-                    float camSize = Single.Parse(command.param3);
+                    //float speed = Single.Parse(command.param2);
+                    float camSize = Single.Parse(command.param2);
 
                     if (!zoom)
                     {
@@ -244,7 +246,7 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-                            cameraSize -= speed;
+                            cameraSize -= Time.deltaTime;
                             gameCameraC.SetSize(cameraSize);
                             Debug.Log(cameraSize);
                         }
