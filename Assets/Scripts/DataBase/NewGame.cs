@@ -23,7 +23,7 @@ public class NewGame : MonoBehaviour
 
     IEnumerator NewGameEntry()
     {
-        WWWForm form = new WWWForm();
+        /*WWWForm form = new WWWForm();
         form.AddField("name", DBManager.username);
         form.AddField("id", DBManager.id);
         form.AddField("posX", positionX.ToString());
@@ -32,8 +32,9 @@ public class NewGame : MonoBehaviour
         form.AddField("attempt", 0);
         form.AddField("health", 1);
         form.AddField("blasterbullet", 5);
-        form.AddField("laserbullet", 5);
-        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
+        form.AddField("laserbullet", 5);*/
+        WWW www = new WWW("http://localhost/sqlconnect/savedata.php?name="+DBManager.username+"&id="+DBManager.id+"&posX=-7640"+"&posY=-2667"+
+                            "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet=5"+"&laserbullet=5");
         yield return www;
 
         if (www.text == "0")

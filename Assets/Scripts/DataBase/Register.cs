@@ -15,8 +15,8 @@ public class Register : MonoBehaviour
     [SerializeField]
     private GameObject loadCercleUI;
 
-    private float positionX = -7.64f;
-    private float positionY = -2.667f;
+    public float positionX = -7.640f;
+    public float positionY = -2.667f;
 
     public Button submitRegister;
 
@@ -28,17 +28,21 @@ public class Register : MonoBehaviour
     IEnumerator Registration()
     {
         //string sqcon = "URI = file:" + Application.dataPath + "/sqlconnect/register.db";
-        WWWForm form = new WWWForm();
-        form.AddField("name", usernameField.text);
+        //WWWForm form = new WWWForm();
+
+        /*form.AddField("name", usernameField.text);
         form.AddField("password", passwordField.text);
-        form.AddField("posX", 7460);
+        form.AddField("posX", positionX.ToString());
         form.AddField("posY", positionY.ToString());
         form.AddField("score", 0);
         form.AddField("attempt", 0);
         form.AddField("health", 1);
         form.AddField("blasterbullet", BlasterSystem.bullets);
-        form.AddField("laserbullet", LaserSystem.bullets);
-        WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
+        form.AddField("laserbullet", LaserSystem.bullets);*/
+        WWW www = new WWW("http://localhost/sqlconnect/register.php?name="+usernameField.text+"&password="+passwordField.text+"&posX=-7640"+"&posY=-2667"+
+                        "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet="+BlasterSystem.bullets+"&laserbullet="+LaserSystem.bullets);
+
+
         yield return www;
 
         if (www.text == "0")

@@ -2,16 +2,16 @@
 
 include("connection.php");
 
-$username = $_POST["name"];
-$password = $_POST["password"];
-$newposX = $_POST["posX"];
-$newposY = $_POST["posY"];
-$newscore = $_POST["score"];
+$username = $_GET["name"];
+/*$password = $_POST["password"];*/
+$newposX = floatval($_GET["posX"]);
+$newposY = floatval($_GET["posY"]);
+/*$newscore = $_POST["score"];
 $newattempt = $_POST['attempt'];
 $newhealth = $_POST['health'];
 $newblasterbullet = $_POST['blasterbullet'];
 $newlaserbullet = $_POST['laserbullet'];
-
+*/
 //Check if the input username already exists
 $usernameCheckQuery = "SELECT username FROM players WHERE username='".$username."';";
 
@@ -28,8 +28,10 @@ if (mysqli_num_rows($usernameCheck) > 0)
 $salt = "\$5\$rounds=5000\$" ."steamedhams".$username."\$";
 $hash = crypt($password, $salt);
 
-$sqlInsertPlayers = "INSERT INTO players(username,hash,salt) VALUES ('$username','$hash','$salt')";
-$sqlInsertGameStats = "INSERT INTO gamestats(posx,posy,score,attempt,health,blasterbullet,laserbullet) VALUES ('$newposX','$newposY','$newscore','$newattempt','$newhealth','$newblasterbullet','$newlaserbullet')";
+echo "INSERT INTO gamestats(posx,posy,score,attempt,health,blasterbullet,laserbullet) VALUES ($newposX,$newposY,'$newscore','$newattempt','$newhealth','$newblasterbullet','$newlaserbullet')";
+
+//$sqlInsertPlayers = "INSERT INTO players(username,hash,salt) VALUES ('$username','$hash','$salt')";
+//$sqlInsertGameStats = "INSERT INTO gamestats(posx,posy,score,attempt,health,blasterbullet,laserbullet) VALUES ($newposX,$newposY,'$newscore','$newattempt','$newhealth','$newblasterbullet','$newlaserbullet')";
 
 
 mysqli_query($conn, $sqlInsertPlayers);

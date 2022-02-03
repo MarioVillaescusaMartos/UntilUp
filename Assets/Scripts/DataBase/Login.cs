@@ -26,10 +26,10 @@ public class Login : MonoBehaviour
 
     IEnumerator Loging()
     {
-        WWWForm form = new WWWForm();
+        /*WWWForm form = new WWWForm();
         form.AddField("name", usernameField.text);
-        form.AddField("password", passwordField.text);
-        WWW www = new WWW("http://localhost/sqlconnect/login.php", form);
+        form.AddField("password", passwordField.text);*/
+        WWW www = new WWW("http://localhost/sqlconnect/login.php?name=" + usernameField.text + "&password=" + passwordField.text);
         yield return www;
 
         if (www.text[0] == '0')
@@ -61,8 +61,8 @@ public class Login : MonoBehaviour
     public void SetDBManager()
     {
         DBManager.id = int.Parse(data[1]);
-        DBManager.posX = float.Parse(data[2]);
-        DBManager.posY = float.Parse(data[3]);
+        DBManager.posX = int.Parse(data[2]) * 0.001f;
+        DBManager.posY = int.Parse(data[3]) * 0.001f;
         DBManager.score = int.Parse(data[4]);
         DBManager.attempt = int.Parse(data[5]);
         DBManager.health = int.Parse(data[6]);

@@ -10,8 +10,6 @@ public class ResetPositionSystem : MonoBehaviour
     private void Awake()
     {
         _healthSystem = GetComponent<PlayerHealthSystem>();
-
-        transform.position = new Vector3(DBManager.posX * 0.001f, DBManager.posY * 0.001f, 0);
     }
 
     private void OnEnable()
