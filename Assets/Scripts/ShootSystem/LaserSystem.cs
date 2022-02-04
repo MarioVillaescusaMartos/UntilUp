@@ -31,9 +31,6 @@ public class LaserSystem : ShootingSystem
     }
     public override void Shoot()
     {
-        /*var shoot = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
-        shoot.GetComponent<Rigidbody2D>().AddForce(shotPoint.transform.up * fireForce);*/
-
         GameObject shot = PoolingManager.Instance.GetPooledObject("laserList");
         if (shot != null && numLBullets > 0)
         {
@@ -76,4 +73,6 @@ public class LaserSystem : ShootingSystem
         ShotManager.laserBullets = numLBullets;
         DBManager.laserbullet = numLBullets;
     }
+
+    IEnumerator
 }
