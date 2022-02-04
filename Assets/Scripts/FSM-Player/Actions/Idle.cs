@@ -9,7 +9,6 @@ public class Idle : FSM.Action
     public override void Act(Controller controller)
     {
         controller.SetAnimation("idle", true);
-        controller.SetAnimation("shot", false);
         controller.SetAnimation("run", false);
         controller.SetAnimation("jump", false);
     }

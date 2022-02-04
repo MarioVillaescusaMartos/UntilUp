@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
-[CreateAssetMenu(menuName = "FSM/Decision/Player/InputKeyboardDecisionW")]
-public class InputKeyboardDecisionW : FSM.Decision
+[CreateAssetMenu(menuName = "FSM/Decision/Player/InputKeyboardDecisionFire")]
+public class InputKeyboardDecisionFire : FSM.Decision
 {
-    //private InputSystemKeyboard _input;
-
     private bool t;
-
     public override bool Decide(Controller controller)
     {
         if (!PauseManager.pauseMode)
         {
-            t = Input.GetKeyDown(KeyCode.W);
+            t = (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"));
         }
+
         return t;
     }
 }
