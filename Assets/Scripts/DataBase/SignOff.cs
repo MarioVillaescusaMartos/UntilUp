@@ -17,6 +17,7 @@ public class SignOff : MonoBehaviour
 
         Debug.Log(DBManager.username);
 
+        DBManager.existsgame = 0;
         DBManager.LogOut();
 
 

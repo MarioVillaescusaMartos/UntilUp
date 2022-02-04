@@ -15,8 +15,6 @@ public class Register : MonoBehaviour
     [SerializeField]
     private GameObject loadCercleUI;
 
-    public float positionX = -7.640f;
-    public float positionY = -2.667f;
 
     public Button submitRegister;
 
@@ -40,7 +38,7 @@ public class Register : MonoBehaviour
         form.AddField("blasterbullet", BlasterSystem.bullets);
         form.AddField("laserbullet", LaserSystem.bullets);*/
         WWW www = new WWW("http://localhost/sqlconnect/register.php?name="+usernameField.text+"&password="+passwordField.text+"&posX=-7640"+"&posY=-2667"+
-                        "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet="+BlasterSystem.bullets+"&laserbullet="+LaserSystem.bullets);
+                        "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet="+BlasterSystem.bullets+"&laserbullet="+LaserSystem.bullets+"&existsgame=0");
 
 
         yield return www;
@@ -50,8 +48,6 @@ public class Register : MonoBehaviour
             Debug.Log("User created successfully.");
 
             System.GC.Collect();
-
-            Debug.Log(positionX.ToString());
 
             SceneManager.LoadScene("SignInScene");
         }

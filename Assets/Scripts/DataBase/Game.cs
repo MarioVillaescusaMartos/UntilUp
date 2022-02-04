@@ -52,7 +52,7 @@ public class Game : MonoBehaviour
         form.AddField("laserbullet", DBManager.laserbullet);*/
 
         WWW www = new WWW("http://localhost/sqlconnect/savedata.php?name=" + DBManager.username + "&id=" + DBManager.id + "&posX=" + gettedposX + "&posY=" + gettedposY +
-                "&score=" + DBManager.score + "&attempt=" + DBManager.attempt + "&health=" + DBManager.health + "&blasterbullet=" + DBManager.blasterbullet + "&laserbullet=" + DBManager.laserbullet);
+                "&score=" + DBManager.score + "&attempt=" + DBManager.attempt + "&health=" + DBManager.health + "&blasterbullet=" + DBManager.blasterbullet + "&laserbullet=" + DBManager.laserbullet + "&existsgame=1");
         yield return www;
         if (www.text == "0")
         {

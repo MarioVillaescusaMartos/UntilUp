@@ -68,6 +68,7 @@ public class Login : MonoBehaviour
         DBManager.health = int.Parse(data[6]);
         DBManager.blasterbullet = int.Parse(data[7]);
         DBManager.laserbullet = int.Parse(data[8]);
+        DBManager.existsgame = int.Parse(data[9]);
     }
 
     public void ShowLoad()

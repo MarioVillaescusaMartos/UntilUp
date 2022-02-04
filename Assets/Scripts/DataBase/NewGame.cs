@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour
 {
-    private float positionX = -7.640f;
-    private float positionY = -2.667f;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +16,6 @@ public class NewGame : MonoBehaviour
     public void NewGames()
     {
         StartCoroutine(NewGameEntry());
-
-        
     }
 
     IEnumerator NewGameEntry()
@@ -34,7 +31,7 @@ public class NewGame : MonoBehaviour
         form.AddField("blasterbullet", 5);
         form.AddField("laserbullet", 5);*/
         WWW www = new WWW("http://localhost/sqlconnect/savedata.php?name="+DBManager.username+"&id="+DBManager.id+"&posX=-7640"+"&posY=-2667"+
-                            "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet=5"+"&laserbullet=5");
+                            "&score=0"+"&attempt=0"+"&health=1"+"&blasterbullet=5"+"&laserbullet=5"+"&existsgame=1");
         yield return www;
 
         if (www.text == "0")
@@ -42,8 +39,8 @@ public class NewGame : MonoBehaviour
             Debug.Log("New Game Created");
 
             System.GC.Collect();
-
-            Debug.Log(positionX.ToString());
+    
+            DBManager.existsgame = 1;
 
             SceneManager.LoadScene("IntroduceStoryScene");
         }

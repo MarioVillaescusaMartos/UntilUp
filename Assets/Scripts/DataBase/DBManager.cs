@@ -13,6 +13,7 @@ public static class DBManager
     public static int health;
     public static int blasterbullet;
     public static int laserbullet;
+    public static int existsgame;
 
     public static bool LoggedIn { get { return username != null; } }
 
