@@ -73,6 +73,4 @@ public class LaserSystem : ShootingSystem
         ShotManager.laserBullets = numLBullets;
         DBManager.laserbullet = numLBullets;
     }
-
-    IEnumerator
 }

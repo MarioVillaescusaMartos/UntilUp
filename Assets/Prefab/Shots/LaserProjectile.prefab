@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 8099214196506042563}
   - component: {fileID: 8099214196506042560}
   - component: {fileID: 7354469942581848308}
-  - component: {fileID: -2629656644737264149}
   - component: {fileID: 4449202865485343113}
+  - component: {fileID: -2629656644737264149}
+  - component: {fileID: 212665866970149184}
   - component: {fileID: 2902598415667299455}
   m_Layer: 10
-  m_Name: LaserProjectile
+  m_Name: laserProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,19 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.3, y: 0.39491308}
   m_EdgeRadius: 0
---- !u!114 &-2629656644737264149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8099214196506042561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcd70fd673f0144a988b43315be12ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restHealth: 1
 --- !u!50 &4449202865485343113
 Rigidbody2D:
   serializedVersion: 4
@@ -168,6 +156,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2629656644737264149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099214196506042561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcd70fd673f0144a988b43315be12ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restHealth: 1
+--- !u!114 &212665866970149184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099214196506042561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8191555be43a41a4fa5418dadc0066e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0.5
 --- !u!114 &2902598415667299455
 MonoBehaviour:
   m_ObjectHideFlags: 0
