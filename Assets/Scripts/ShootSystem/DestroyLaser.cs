@@ -27,7 +27,6 @@ public class DestroyLaser : MonoBehaviour
             else
             {
                 timer -= Time.deltaTime;
-                Debug.Log(timer);
             }
         }
 
