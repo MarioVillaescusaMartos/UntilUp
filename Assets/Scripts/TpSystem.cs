@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class TpSystem : MonoBehaviour
 {
     [SerializeField]
     private float time;
     private float waitTimer;
+
+    [SerializeField]
+    private Text textDysplay;
 
     private bool tpEnter;
 
@@ -44,6 +48,12 @@ public class TpSystem : MonoBehaviour
         else
         {
             waitTimer -= Time.deltaTime;
+            textDysplay.text = "TP: not available";
+        }
+
+        if (tpEnter)
+        {
+            textDysplay.text = "TP: available";
         }
     }
 
