@@ -40,6 +40,7 @@ public class ScoreSystem : MonoBehaviour
         DBManager.score = score;
 
         Debug.Log("Score: " + score);
+        PassValue();
     }
 
     public void PassValue()

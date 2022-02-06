@@ -39,8 +39,8 @@ public class NewGame : MonoBehaviour
             Debug.Log("New Game Created");
 
             System.GC.Collect();
-    
-            DBManager.existsgame = 1;
+
+            SetDBManager();
 
             SceneManager.LoadScene("IntroduceStoryScene");
         }
@@ -48,5 +48,17 @@ public class NewGame : MonoBehaviour
         {
             Debug.Log("User creation field. Error #" + www.text);
         }
+    }
+
+    public void SetDBManager()
+    {
+        DBManager.posX = 7640 * 0.001f;
+        DBManager.posY = 2667 * 0.001f;
+        DBManager.score = 0;
+        DBManager.attempt = -2;
+        DBManager.health = 1;
+        DBManager.blasterbullet = 5;
+        DBManager.laserbullet = 5;
+        DBManager.existsgame = 1;
     }
 }
