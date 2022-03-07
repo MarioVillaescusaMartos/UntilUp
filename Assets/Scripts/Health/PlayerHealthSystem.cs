@@ -11,9 +11,13 @@ public class PlayerHealthSystem : HealthSystem
 
     public bool INVENCIBLE;
 
-    void Start()
+    private void Awake()
     {
         health = DBManager.health;
+    }
+
+    void Start()
+    {
         SendHealth();
     }
 
