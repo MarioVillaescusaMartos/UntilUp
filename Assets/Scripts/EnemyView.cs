@@ -32,7 +32,7 @@ public class EnemyView : MonoBehaviour
     {
         if (_sp.flipX)
         {
-            hit = Physics2D.Raycast(viewpoint.position, Vector2.right, -length, playerLayer);
+            hit = Physics2D.Raycast(viewpoint.position, Vector2.left, length, playerLayer);
         }
         else
         {
@@ -46,8 +46,8 @@ public class EnemyView : MonoBehaviour
     }
 
     private void OnDrawGizmos()
-    {
-        Debug.DrawLine(viewpoint.position, viewpoint.position + Vector3.right * -length);
+    {    
+        Debug.DrawLine(viewpoint.position, viewpoint.position + Vector3.left * length);
     }
 
     public bool ReturnHit()
